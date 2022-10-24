@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Runly.Pages.Training" >
+    <ContentPage.Content>
+        <StackLayout>
+            <Label Text="Szerokość" TextColor="Gray" FontSize="15"/>
+            <Label x:Name="LatitudeLabel" FontSize="20"/>
+            <Label Text="Długość geograficzna" TextColor="Gray" FontSize = "15" />
+            <Label x:Name="LongitudeLabel" FontSize="20"/>
+            <Button Text="Pobranie pozycji GPS" Clicked="Button_OnClicked" />
+            <Label Text="Trening"
+                VerticalOptions="CenterAndExpand" 
+                HorizontalOptions="CenterAndExpand" />
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
