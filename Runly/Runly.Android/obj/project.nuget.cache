@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "8XckCOv0Oo/Rp+c5nZWMlxHTLqXttq5anfwXXXSAH2GsoVRxAcIgHubxjGHb+okcSiDlDM6Fs+0ct/WsQYFoAA==",
+  "dgSpecHash": "8hFBLQ+HhQ5RMhC+3yRknp+iRyei3gNXHbuJVa8xBqPUxZx1OjY1MZVN5T9uPeK55YRwBjYMdSRJFwFmlxvIIw==",
   "success": true,
-  "projectFilePath": "D:\\Dev\\Xamarin\\Runly\\Runly\\Runly.Android\\Runly.Android.csproj",
+  "projectFilePath": "D:\\Dev\\Xamarin\\Programowanie-urzadzen-mobilnych-2022-3\\Runly\\Runly.Android\\Runly.Android.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\BT\\.nuget\\packages\\system.numerics.vectors\\4.5.0\\system.numerics.vectors.4.5.0.nupkg.sha512",
     "C:\\Users\\BT\\.nuget\\packages\\xamarin.androidx.activity\\1.2.4.1\\xamarin.androidx.activity.1.2.4.1.nupkg.sha512",

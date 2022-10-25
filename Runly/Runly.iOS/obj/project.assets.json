@@ -1069,11 +1069,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\Dev\\Xamarin\\Runly\\Runly\\Runly.iOS\\Runly.iOS.csproj",
+      "projectUniqueName": "D:\\Dev\\Xamarin\\Programowanie-urzadzen-mobilnych-2022-3\\Runly\\Runly.iOS\\Runly.iOS.csproj",
       "projectName": "Runly.iOS",
-      "projectPath": "D:\\Dev\\Xamarin\\Runly\\Runly\\Runly.iOS\\Runly.iOS.csproj",
+      "projectPath": "D:\\Dev\\Xamarin\\Programowanie-urzadzen-mobilnych-2022-3\\Runly\\Runly.iOS\\Runly.iOS.csproj",
       "packagesPath": "C:\\Users\\BT\\.nuget\\packages\\",
-      "outputPath": "D:\\Dev\\Xamarin\\Runly\\Runly\\Runly.iOS\\obj\\",
+      "outputPath": "D:\\Dev\\Xamarin\\Programowanie-urzadzen-mobilnych-2022-3\\Runly\\Runly.iOS\\obj\\",
       "projectStyle": "PackageReference",
       "skipContentFileWrite": true,
       "fallbackFolders": [
@@ -1096,8 +1096,8 @@
       "frameworks": {
         "xamarinios10": {
           "projectReferences": {
-            "D:\\Dev\\Xamarin\\Runly\\Runly\\Runly\\Runly.csproj": {
-              "projectPath": "D:\\Dev\\Xamarin\\Runly\\Runly\\Runly\\Runly.csproj"
+            "D:\\Dev\\Xamarin\\Programowanie-urzadzen-mobilnych-2022-3\\Runly\\Runly\\Runly.csproj": {
+              "projectPath": "D:\\Dev\\Xamarin\\Programowanie-urzadzen-mobilnych-2022-3\\Runly\\Runly\\Runly.csproj"
             }
           }
         }

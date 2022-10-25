@@ -3415,11 +3415,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\Dev\\Xamarin\\Runly\\Runly\\Runly.Android\\Runly.Android.csproj",
+      "projectUniqueName": "D:\\Dev\\Xamarin\\Programowanie-urzadzen-mobilnych-2022-3\\Runly\\Runly.Android\\Runly.Android.csproj",
       "projectName": "Runly.Android",
-      "projectPath": "D:\\Dev\\Xamarin\\Runly\\Runly\\Runly.Android\\Runly.Android.csproj",
+      "projectPath": "D:\\Dev\\Xamarin\\Programowanie-urzadzen-mobilnych-2022-3\\Runly\\Runly.Android\\Runly.Android.csproj",
       "packagesPath": "C:\\Users\\BT\\.nuget\\packages\\",
-      "outputPath": "D:\\Dev\\Xamarin\\Runly\\Runly\\Runly.Android\\obj\\",
+      "outputPath": "D:\\Dev\\Xamarin\\Programowanie-urzadzen-mobilnych-2022-3\\Runly\\Runly.Android\\obj\\",
       "projectStyle": "PackageReference",
       "skipContentFileWrite": true,
       "fallbackFolders": [
@@ -3442,8 +3442,8 @@
       "frameworks": {
         "monoandroid12.0": {
           "projectReferences": {
-            "D:\\Dev\\Xamarin\\Runly\\Runly\\Runly\\Runly.csproj": {
-              "projectPath": "D:\\Dev\\Xamarin\\Runly\\Runly\\Runly\\Runly.csproj"
+            "D:\\Dev\\Xamarin\\Programowanie-urzadzen-mobilnych-2022-3\\Runly\\Runly\\Runly.csproj": {
+              "projectPath": "D:\\Dev\\Xamarin\\Programowanie-urzadzen-mobilnych-2022-3\\Runly\\Runly\\Runly.csproj"
             }
           }
         }
