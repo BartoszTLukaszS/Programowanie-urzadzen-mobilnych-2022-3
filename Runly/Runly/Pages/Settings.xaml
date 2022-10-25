@@ -2,11 +2,15 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="Runly.Pages.Settings">
-    <ContentPage.Content>
-        <StackLayout>
-            <Label Text="Ustawienia"
-                VerticalOptions="CenterAndExpand" 
-                HorizontalOptions="CenterAndExpand" />
-        </StackLayout>
-    </ContentPage.Content>
+    <ListView x:Name="myListView" SeparatorColor="Gray" >
+        <ListView.ItemTemplate>
+            <DataTemplate>
+            
+                <ImageCell Text="{Binding Name}"	
+                           ImageSource="{Binding Icon}"
+                           TextColor="Black" />
+
+            </DataTemplate>
+        </ListView.ItemTemplate>
+    </ListView>
 </ContentPage>

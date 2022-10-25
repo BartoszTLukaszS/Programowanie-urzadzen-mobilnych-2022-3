@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "lQf7qW85molAPjc8RFHrVws5V1Tk4YYSIQJZe1tSqBLHsxSORAvGE0odxjY8B7YgPPkDIkFzkL9NZmtWSxMR+Q==",
+  "dgSpecHash": "Ehy63nNn5qRRWiT8MxkCYA436cHdDn7sfjPsZ2+G/viRMmk24qvHG2cAE1eQI/wAqif6YaZA0wnZcMQU4S4/6g==",
   "success": true,
-  "projectFilePath": "D:\\Dev\\Xamarin\\Programowanie-urzadzen-mobilnych-2022-3\\Runly\\Runly.iOS\\Runly.iOS.csproj",
+  "projectFilePath": "D:\\Dev\\repos\\Programowanie-urzadzen-mobilnych-2022-3\\Runly\\Runly.iOS\\Runly.iOS.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\BT\\.nuget\\packages\\system.numerics.vectors\\4.5.0\\system.numerics.vectors.4.5.0.nupkg.sha512",
     "C:\\Users\\BT\\.nuget\\packages\\xamarin.essentials\\1.7.0\\xamarin.essentials.1.7.0.nupkg.sha512",

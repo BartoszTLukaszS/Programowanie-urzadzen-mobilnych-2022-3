@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "0g2mQfa+BHqq8YnoM7IlYgl452KzttnZ1oF+DY1lEbowsCDfTSlmqQjh9iX2vqmgPwCUk3YOXPcLDJiE861eGg==",
+  "dgSpecHash": "/skRJBb060rHJvwXy2lKxJR+EtumukizfJ5pQZTpNpjuCPSJMPo23tjzy6cywhqyhlY18qOXcz3HCVveielY0Q==",
   "success": true,
-  "projectFilePath": "D:\\Dev\\Xamarin\\Programowanie-urzadzen-mobilnych-2022-3\\Runly\\Runly\\Runly.csproj",
+  "projectFilePath": "D:\\Dev\\repos\\Programowanie-urzadzen-mobilnych-2022-3\\Runly\\Runly\\Runly.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\BT\\.nuget\\packages\\microsoft.netcore.platforms\\1.1.0\\microsoft.netcore.platforms.1.1.0.nupkg.sha512",
     "C:\\Users\\BT\\.nuget\\packages\\netstandard.library\\2.0.3\\netstandard.library.2.0.3.nupkg.sha512",
