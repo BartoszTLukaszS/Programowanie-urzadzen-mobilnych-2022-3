@@ -11,7 +11,8 @@
         "dependencies": {
           "NETStandard.Library": "2.0.3",
           "Xamarin.Essentials": "1.7.0",
-          "Xamarin.Forms": "5.0.0.2515"
+          "Xamarin.Forms": "5.0.0.2515",
+          "Xamarin.Forms.Maps": "5.0.0.2515"
         },
         "runtime": {
           "Runly.dll": {}
@@ -53,6 +54,17 @@
             "fileVersion": "5.0.0.946"
           },
           "lib/netstandard2.0/Xamarin.Forms.Xaml.dll": {
+            "assemblyVersion": "2.0.0.0",
+            "fileVersion": "5.0.0.946"
+          }
+        }
+      },
+      "Xamarin.Forms.Maps/5.0.0.2515": {
+        "dependencies": {
+          "Xamarin.Forms": "5.0.0.2515"
+        },
+        "runtime": {
+          "lib/netstandard2.0/Xamarin.Forms.Maps.dll": {
             "assemblyVersion": "2.0.0.0",
             "fileVersion": "5.0.0.946"
           }
@@ -100,6 +112,13 @@
       "sha512": "sha512-n/Y/xk1idWRkxk7xItwvNwwda7CHpIk7JxD6tXkGXmTqiVGV1xRkepf5aKXFkQLM9KIQhXXYBxPsdyJysPpktw==",
       "path": "xamarin.forms/5.0.0.2515",
       "hashPath": "xamarin.forms.5.0.0.2515.nupkg.sha512"
+    },
+    "Xamarin.Forms.Maps/5.0.0.2515": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-B+fC4m/UIT0SScSisejywpWRUZy/aWYUOxCZae0aV2OYWYV7dE9cJvN9PcCVeAT/Ed+xf3rxWhXahvm5RWsJgg==",
+      "path": "xamarin.forms.maps/5.0.0.2515",
+      "hashPath": "xamarin.forms.maps.5.0.0.2515.nupkg.sha512"
     }
   }
 }
