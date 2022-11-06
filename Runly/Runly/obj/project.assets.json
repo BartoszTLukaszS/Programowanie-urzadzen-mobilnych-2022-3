@@ -592,23 +592,23 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\BT\\.nuget\\packages\\": {},
+    "C:\\Users\\luksz\\.nuget\\packages\\": {},
     "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\Dev\\Xamarin\\Programowanie-urzadzen-mobilnych-2022-3\\Runly\\Runly\\Runly.csproj",
+      "projectUniqueName": "C:\\Users\\luksz\\Source\\Repos\\Programowanie-urzadzen-mobilnych-2022-3f\\Runly\\Runly\\Runly.csproj",
       "projectName": "Runly",
-      "projectPath": "D:\\Dev\\Xamarin\\Programowanie-urzadzen-mobilnych-2022-3\\Runly\\Runly\\Runly.csproj",
-      "packagesPath": "C:\\Users\\BT\\.nuget\\packages\\",
-      "outputPath": "D:\\Dev\\Xamarin\\Programowanie-urzadzen-mobilnych-2022-3\\Runly\\Runly\\obj\\",
+      "projectPath": "C:\\Users\\luksz\\Source\\Repos\\Programowanie-urzadzen-mobilnych-2022-3f\\Runly\\Runly\\Runly.csproj",
+      "packagesPath": "C:\\Users\\luksz\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\luksz\\Source\\Repos\\Programowanie-urzadzen-mobilnych-2022-3f\\Runly\\Runly\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
       ],
       "configFilePaths": [
-        "C:\\Users\\BT\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\luksz\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],

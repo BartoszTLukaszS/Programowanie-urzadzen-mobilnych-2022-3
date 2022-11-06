@@ -1,13 +1,13 @@
 {
   "version": 2,
-  "dgSpecHash": "tcU/F9MohZrj1b0/b31halFad6bLmL63uDQIUJweebGjpnfEJHFcoG1zM5fj8MOg0UUtSwJvsHrqGEDWYap33Q==",
+  "dgSpecHash": "jdU9GeIS8wU/zUAvPD9qg6VCo8BtZZU6omtRy0eEiS1KL8HveOeW8k5Fz2dluXRRO1HQ7PODiCl2hlMHWiaBEw==",
   "success": true,
-  "projectFilePath": "D:\\Dev\\Xamarin\\Programowanie-urzadzen-mobilnych-2022-3\\Runly\\Runly.iOS\\Runly.iOS.csproj",
+  "projectFilePath": "C:\\Users\\luksz\\Source\\Repos\\Programowanie-urzadzen-mobilnych-2022-3f\\Runly\\Runly.iOS\\Runly.iOS.csproj",
   "expectedPackageFiles": [
-    "C:\\Users\\BT\\.nuget\\packages\\system.numerics.vectors\\4.5.0\\system.numerics.vectors.4.5.0.nupkg.sha512",
-    "C:\\Users\\BT\\.nuget\\packages\\xamarin.essentials\\1.7.0\\xamarin.essentials.1.7.0.nupkg.sha512",
-    "C:\\Users\\BT\\.nuget\\packages\\xamarin.forms\\5.0.0.2515\\xamarin.forms.5.0.0.2515.nupkg.sha512",
-    "C:\\Users\\BT\\.nuget\\packages\\xamarin.forms.maps\\5.0.0.2515\\xamarin.forms.maps.5.0.0.2515.nupkg.sha512"
+    "C:\\Users\\luksz\\.nuget\\packages\\system.numerics.vectors\\4.5.0\\system.numerics.vectors.4.5.0.nupkg.sha512",
+    "C:\\Users\\luksz\\.nuget\\packages\\xamarin.essentials\\1.7.0\\xamarin.essentials.1.7.0.nupkg.sha512",
+    "C:\\Users\\luksz\\.nuget\\packages\\xamarin.forms\\5.0.0.2515\\xamarin.forms.5.0.0.2515.nupkg.sha512",
+    "C:\\Users\\luksz\\.nuget\\packages\\xamarin.forms.maps\\5.0.0.2515\\xamarin.forms.maps.5.0.0.2515.nupkg.sha512"
   ],
   "logs": []
 }
