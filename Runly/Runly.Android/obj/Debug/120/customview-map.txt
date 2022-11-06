@@ -1,4 +1,6 @@
 @string/appbar_scrolling_view_behavior;C:\Users\luksz\Source\Repos\Programowanie-urzadzen-mobilnych-2022-3f\Runly\Runly.Android\obj\Debug\120\lp\55\jl\res\layout\rootlayout.xml
+adaptive-icon;obj\Debug\120\res\mipmap-anydpi-v26\ic_launcher.xml
+adaptive-icon;obj\Debug\120\res\mipmap-anydpi-v26\ic_launcher_round.xml
 adaptive-icon;obj\Debug\120\res\mipmap-anydpi-v26\icon.xml
 adaptive-icon;obj\Debug\120\res\mipmap-anydpi-v26\icon_round.xml
 alpha;C:\Users\luksz\Source\Repos\Programowanie-urzadzen-mobilnych-2022-3f\Runly\Runly.Android\obj\Debug\120\lp\55\jl\res\anim\enterfromleft.xml
@@ -10,10 +12,13 @@ androidx.appcompat.widget.Toolbar;C:\Users\luksz\Source\Repos\Programowanie-urza
 androidx.coordinatorlayout.widget.CoordinatorLayout;C:\Users\luksz\Source\Repos\Programowanie-urzadzen-mobilnych-2022-3f\Runly\Runly.Android\obj\Debug\120\lp\55\jl\res\layout\rootlayout.xml
 androidx.coordinatorlayout.widget.CoordinatorLayout;C:\Users\luksz\Source\Repos\Programowanie-urzadzen-mobilnych-2022-3f\Runly\Runly.Android\obj\Debug\120\lp\55\jl\res\layout\shellcontent.xml
 attr;C:\Users\luksz\Source\Repos\Programowanie-urzadzen-mobilnych-2022-3f\Runly\Runly.Android\obj\Debug\120\lp\55\jl\res\values\attrs.xml
+background;obj\Debug\120\res\mipmap-anydpi-v26\ic_launcher.xml
+background;obj\Debug\120\res\mipmap-anydpi-v26\ic_launcher_round.xml
 background;obj\Debug\120\res\mipmap-anydpi-v26\icon.xml
 background;obj\Debug\120\res\mipmap-anydpi-v26\icon_round.xml
 cache-path;C:\Users\luksz\Source\Repos\Programowanie-urzadzen-mobilnych-2022-3f\Runly\Runly.Android\obj\Debug\120\lp\53\jl\res\xml\xamarin_essentials_fileprovider_file_paths.xml
 color;obj\Debug\120\res\values\colors.xml
+color;obj\Debug\120\res\values\ic_launcher_background.xml
 com.google.android.material.appbar.AppBarLayout;C:\Users\luksz\Source\Repos\Programowanie-urzadzen-mobilnych-2022-3f\Runly\Runly.Android\obj\Debug\120\lp\55\jl\res\layout\flyoutcontent.xml
 com.google.android.material.appbar.AppBarLayout;C:\Users\luksz\Source\Repos\Programowanie-urzadzen-mobilnych-2022-3f\Runly\Runly.Android\obj\Debug\120\lp\55\jl\res\layout\rootlayout.xml
 com.google.android.material.appbar.AppBarLayout;C:\Users\luksz\Source\Repos\Programowanie-urzadzen-mobilnych-2022-3f\Runly\Runly.Android\obj\Debug\120\lp\55\jl\res\layout\shellcontent.xml
@@ -24,6 +29,8 @@ com.google.android.material.tabs.TabLayout;C:\Users\luksz\Source\Repos\Programow
 declare-styleable;C:\Users\luksz\Source\Repos\Programowanie-urzadzen-mobilnych-2022-3f\Runly\Runly.Android\obj\Debug\120\lp\55\jl\res\values\attrs.xml
 external-cache-path;C:\Users\luksz\Source\Repos\Programowanie-urzadzen-mobilnych-2022-3f\Runly\Runly.Android\obj\Debug\120\lp\53\jl\res\xml\xamarin_essentials_fileprovider_file_paths.xml
 external-path;C:\Users\luksz\Source\Repos\Programowanie-urzadzen-mobilnych-2022-3f\Runly\Runly.Android\obj\Debug\120\lp\53\jl\res\xml\xamarin_essentials_fileprovider_file_paths.xml
+foreground;obj\Debug\120\res\mipmap-anydpi-v26\ic_launcher.xml
+foreground;obj\Debug\120\res\mipmap-anydpi-v26\ic_launcher_round.xml
 foreground;obj\Debug\120\res\mipmap-anydpi-v26\icon.xml
 foreground;obj\Debug\120\res\mipmap-anydpi-v26\icon_round.xml
 FrameLayout;C:\Users\luksz\Source\Repos\Programowanie-urzadzen-mobilnych-2022-3f\Runly\Runly.Android\obj\Debug\120\lp\55\jl\res\layout\bottomtablayout.xml
@@ -35,6 +42,7 @@ resources;C:\Users\luksz\Source\Repos\Programowanie-urzadzen-mobilnych-2022-3f\R
 resources;C:\Users\luksz\Source\Repos\Programowanie-urzadzen-mobilnych-2022-3f\Runly\Runly.Android\obj\Debug\120\lp\55\jl\res\values\strings.xml
 resources;C:\Users\luksz\Source\Repos\Programowanie-urzadzen-mobilnych-2022-3f\Runly\Runly.Android\obj\Debug\120\lp\55\jl\res\values\styles.xml
 resources;obj\Debug\120\res\values\colors.xml
+resources;obj\Debug\120\res\values\ic_launcher_background.xml
 resources;obj\Debug\120\res\values\styles.xml
 set;C:\Users\luksz\Source\Repos\Programowanie-urzadzen-mobilnych-2022-3f\Runly\Runly.Android\obj\Debug\120\lp\55\jl\res\anim\enterfromleft.xml
 set;C:\Users\luksz\Source\Repos\Programowanie-urzadzen-mobilnych-2022-3f\Runly\Runly.Android\obj\Debug\120\lp\55\jl\res\anim\enterfromright.xml
