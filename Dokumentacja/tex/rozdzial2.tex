@@ -1,10 +1,28 @@
 \newpage
 \section{Określenie wymagań szczegółowych}		%2
 
+\subsection{Środowisko programistyczne}  %2.1
 
-\hspace{0.60cm}Aplikacja zostanie napisana korzystając z Xamarin.Forms. Jest to środowisko umożliwiające tworzenie aplikacji za pomocą języka XAML oraz kodu w języku C\#.
+\hspace{1.2cm}Aplikacja zostanie napisana korzystając z Xamarin.Forms. Jest to środowisko umożliwiające tworzenie aplikacji za pomocą języka XAML oraz kodu w języku C\#. 
 
-\hspace{0.60cm}Aplikacja będzie podzielona na podstrony. Na dole będzie znajdować się menu z opcjami. Wybór poszczególnej opcji w menu wyświetli daną podstronę w ekranie aplikacji.
+\subsection{Ogólny wygląd interfejsu}  %2.2
 
+\hspace{0.60cm}Aplikacja będzie podzielona na podstrony. Na dole będzie znajdować się menu z opcjami. Wybór poszczególnej opcji w menu wyświetli daną podstronę w ekranie aplikacji. Kolejne podstrony to: Kroki, Trening, Historia, Ustawienia.
+
+\subsection{Krokomierz}  %2.3
+
+\hspace{0.60cm}W zakładce Kroki aplikacja będzie wyświetlała, korzystając z odpowiedniego sensora (krokomierza), liczbę kroków jaką użytkownik wykonał od rozpoczęcia treningu. Moduł krokomierza jest wymagany by zapobiegać oszustom, a tym samym zwiększyć wiarygodność aplikacji. Zastosowanie krokomierza umożliwia wykluczenie wpisów podejrzanych, które mogłyby wystąpić, gdyby użytkownik jechał na przykład rowerem lub samochodem. Takie rozwiązanie jest normalne w tego typu aplikacjach. Oprogramowanie Android w wersjach 4.4 i wyższych posiada wsparcie dla sensorów takich jak detektor kroków oraz licznik kroków. Kroki podczas biegu są łatwiejsze do odróżnienia od tych podczas zwykłego spaceru ze względu na bardziej wyraźne oddziaływanie na sensory. Tak więc jest duże prawdopodobieństwo, że krokomierz będzie bardzo dokładnie mierzył kroki, a system będzie działał niezawodnie w wyjątkowych sytuacjach.
+
+\subsection{Moduł GPS}  %2.4
+
+\hspace{0.60cm}W zakładce Trening aplikacja będzie wyświetlała pomiar biegu użytkownika, \\ a dokładniej mówiąc pomiar przebiegniętego dystansu, prędkości biegu w danej chwili oraz czasu . Odbywa się to na podstawie informacji \\ o jego pozycji. Można to zrealizować na kilka sposobów. Te sposoby to: wykorzystanie globalnego systemu pozycjonowania (GPS), technologia lokalizacji wieży komórkowej lub lokalizacja za pomocą WiFi Powinno się wybrać sposób najbardziej odpowiedni dla naszej aplikacji biorąc pod uwagę przede wszystkim środowisko \\ w jakim będzie ona używana. \\ 
+W naszym przypadku jest to system GPS, gdyż zapewnia on najdokładniejsze dane lokalizycyjne, wykorzystuje najwięcej mocy i działa najlepiej na zewnątrz, co w naszym przypadku jest kluczowe dla odpowiedniego działania aplikacji. Zakładając, że użytkownik przemieszcza się, można zdefiniować jego pozycję z dokładnością do około 6 metrów.
+
+\hspace{0.60cm}Aplikacja z obsługą lokalizacji wymaga dostępu do czujników sprzętowych urządzenia w celu odbierania danych GPS. Dostęp jest kontrolowany za pomocą odpowiednich uprawnień w manifeście Androida aplikacji (plik AndroidManifest.xml). Dostępne są dwa uprawnienia: \\ \textit{ACCESS\_COARSE\_LOCATION} - zapewnia aplikacji dostęp do dostawcy GPS \\ oraz 
+\textit{ACCESS\_FINE\_LOCATION} - umożliwia aplikacji dostęp do sieci komórkowej \\ i WiFi lokalizacji. Wymagane dla dostawcy sieci gdy ACCESS\_COARSE\_LOCATION jest nieustawiony.
+
+\subsection{Mapy Google}  %2.5
+
+\hspace{0.60cm}W zakładce Trening będzie wyświetlana również, korzystając z modułu GPS, aktualna pozycja użytkownika na Mapach Google. 
 
 
