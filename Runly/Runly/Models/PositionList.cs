@@ -1,13 +1,17 @@
-﻿using System;
+﻿using SQLite;
+using System;
 using System.Collections.Generic;
 using System.Text;
 using Xamarin.Essentials;
 
 namespace Runly.Models
 {
-    internal class PositionList
+    public class PositionList
     {
-        public Location location { get; set; } 
+        [PrimaryKey, AutoIncrement]
+
+        public int Id { get; set; }
+        public Location Location { get; set; } 
         //public double Latitude { get; set; }
         //public double Longitude { get; set; }
 
