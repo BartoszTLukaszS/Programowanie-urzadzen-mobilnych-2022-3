@@ -35,12 +35,9 @@ namespace Runly.Pages
         {
             base.OnAppearing();
             GetTrainingData();
-            
-            //dataStartu.Text = result[0].Da
-            //testowe.Text = GetTrainingData().ToString();
-            //collectionView.ItemsSource = await GetTrainingData();
         }
 
+        //Wypisanie danych z bazy danych na ekran
         public async Task<List<TrainingData>> GetTrainingData()
         {
             var query = _database.Table<TrainingData>().Where(p => p.Id == buttonId);

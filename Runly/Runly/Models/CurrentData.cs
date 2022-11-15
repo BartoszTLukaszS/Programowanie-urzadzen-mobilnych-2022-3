@@ -6,6 +6,7 @@ using Xamarin.Essentials;
 
 namespace Runly.Models
 {
+    //Zestaw danych dla bazy danych lokalizacji w treningu
     public class CurrentData
     {
         [PrimaryKey, AutoIncrement]

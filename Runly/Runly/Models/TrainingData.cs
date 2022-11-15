@@ -5,6 +5,7 @@ using System.Text;
 
 namespace Runly.Models
 {
+    //Zestaw danych dla głównej bazy danych
     public class TrainingData
     {
         [PrimaryKey, AutoIncrement]
