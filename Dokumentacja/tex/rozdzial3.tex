@@ -2,5 +2,152 @@
 \section{Projektowanie}		%3
 %Opis przygotowania narzędzi (git, visual studio). Wybór i opis bibliotek, klas. Szkic layoutów. Pseudo kody. Opisy wykorzystanych algorytmów (np. algorytm sortowania). Dokładniejsze określenie założeń i działania aplikacji, (np.: ten przycisk otworzy takie okno a w tym oknie wpisujemy takie dane).
 
+\subsection{Przygotowanie narzędzi (Git, Visual Studio)}		%3.1
 
+\hspace{0.60cm}Pierwszym i oczywistym krokiem, który musimy wykonać jest przygotowanie właściwych technologii i środowisk, które posłużą do tworzenia naszego projektu. Jako środowisko programistyczne wybrano Visual Studio 2022 i dostępną na nim wspomnianą wcześniej platformę Xamarin.Forms. W celu instalacji tego narzędzia, pobieramy plik instalacyjny ze strony Microsoftu. Podczas instalacji, w menedżerze dodatkowych pakietów, wybieramy pakiet \textit{Mobile developement with .NET}, zaznaczając też opcjonalne dodatki w zależności od wymagań (np. Xamarin, emulator Androida itd.). Środowisko Visual Studio posiada zintegrowany system kontroli wersji oprogramowania Git, który będzie wspomagał naszą pracę. 
 
+\hspace{0.60cm}Na stronie Github stworzone zostało zdalne repozytorium, do którego wysyłane będą kolejne wersje naszego projektu, z możliwością kontrybucji ze strony członków zespołu programistów. 
+
+\subsection{Wybrane kody i pseudokody z objaśnieniami działania}		%3.2
+
+\subsubsection{Zakładka Historia} %3.2.1
+
+\hspace{0.60cm}Inicjalizacja połączenia z bazą danych:
+\begin{verbatim}
+	public History()
+	{
+		InitializeComponent();
+		
+		_database = new SQLiteAsyncConnection(Path.Combine(Environment.
+		GetFolderPath(Environment.SpecialFolder.LocalApplication
+		Data), "trainingHistory.db3"));
+	}
+\end{verbatim}
+
+\hspace{0.60cm}Wypisanie danych na ekran:
+\begin{verbatim}
+	protected override async void OnAppearing()
+	{
+		base.OnAppearing();
+		
+		//Wypisanie danych na ekran
+		collectionView.ItemsSource = await GetTrainingData();
+	}
+\end{verbatim}
+
+\hspace{0.60cm}Pobranie danych z bazy danych:
+\begin{verbatim}
+	public async Task<List<TrainingData>> GetTrainingData()
+	{
+		var query = await _database.Table<TrainingData>().ToListAsync();
+		results = Enumerable.Reverse(query).ToList();
+		return results;
+	}
+\end{verbatim}
+
+\hspace{0.60cm}Funkcja otwieracjąca widok statystyk, podsumowania:
+\begin{verbatim}
+	private async void OpenStatistics(object sender, EventArgs e)
+	{
+		var btn = (Button)sender;
+		await Navigation.PushAsync(new StatisticsView(btn.ClassId));
+	}
+\end{verbatim}
+
+\subsubsection{Zakładka Trening} %3.2.2
+
+\hspace{0.60cm}Połączenie z bazą danych:
+\begin{verbatim}
+	public Training()
+	{
+		InitializeComponent();
+		
+		//Połączenie z bazą danych
+		_database = new SQLiteAsyncConnection(Path.Combine(Environment.
+		GetFolderPath(Environment.SpecialFolder.
+		LocalApplicationData), "trainingHistory.db3"));
+		_database.CreateTableAsync<TrainingData>();
+		GetLocation();
+	}
+\end{verbatim}
+
+\hspace{0.60cm}Funkcja pobierająca lokalizację:
+\begin{verbatim}
+	private async void GetLocation()
+	{
+		//Pobranie lokalizacji
+		var request = new GeolocationRequest(GeolocationAccuracy.Best);
+		var location = await Geolocation.GetLocationAsync(request);
+		
+		if (location != null)
+		{
+			position = new Position(location.Latitude, location.Longitude);
+			
+			//Przesunięcie widoku na lokalizację przeciwnika
+			map.MoveToRegion(MapSpan.FromCenterAndRadius(position, Distance.
+			FromKilometers(0.5)));
+			
+			if (isTraining)
+			{   
+				//Zapis danych lokalizacji
+				positionsList.Add(new PositionList { Location = location, TimeLasted = 
+					(hours * 3600 + mins * 60 + secs) });
+				await SaveCurrentData(new CurrentData
+				{
+					Latitude = location.Latitude,
+					Longitude = location.Longitude,
+					TimeLasted = (hours * 3600 + mins * 60 + secs)
+				});
+				UpdateInfo();
+			}
+			
+		}
+		
+		//Pobranie lokalizacji wywoływane co 2 sekundy
+		await Task.Delay(2000);
+		GetLocation();
+		
+	}
+\end{verbatim}
+
+\hspace{0.60cm}Wyświetlenie dystansu w określonym formacie zależnym od dystansu:
+\begin{verbatim}
+	if (way < 1)
+	{
+		amountDistance.Text = (way * 1000).ToString();
+		distanceSize.Text = " m";
+	}
+	else if (way < 10)
+	{
+		amountDistance.Text = string.Format("{0:0.00}", way);
+		distanceSize.Text = " km";
+	}
+	else if (way < 100)
+	{
+		amountDistance.Text = string.Format("{0:00.0}", way);
+		distanceSize.Text = " km";
+	}
+	else
+	{
+		amountDistance.Text = string.Format("{0:000}", way);
+		distanceSize.Text = " km";
+	}
+\end{verbatim}
+
+\hspace{0.60cm}Zapisanie danych do bazy danych:
+\begin{verbatim}
+	public Task<int> SaveTrainingData(TrainingData trainingData)      
+	{
+		return _database.InsertAsync(trainingData);
+	}
+	
+	public Task<int> CountTrainings()
+	{
+		return _database.Table<TrainingData>().CountAsync();
+	}
+	
+	public Task<int> SaveCurrentData(CurrentData currentPosition)
+	{
+		return _databaseTraining.InsertAsync(currentPosition);
+	}
+\end{verbatim}

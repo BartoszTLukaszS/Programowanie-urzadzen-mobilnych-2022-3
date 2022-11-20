@@ -3903,24 +3903,24 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\BT\\.nuget\\packages\\": {},
+    "C:\\Users\\luksz\\.nuget\\packages\\": {},
     "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\Dev\\Xamarin\\Programowanie-urzadzen-mobilnych-2022-3\\Runly\\Runly.Android\\Runly.Android.csproj",
+      "projectUniqueName": "C:\\Users\\luksz\\Source\\Repos\\Programowanie-urzadzen-mobilnych-2022-3 AND\\Runly\\Runly.Android\\Runly.Android.csproj",
       "projectName": "Runly.Android",
-      "projectPath": "D:\\Dev\\Xamarin\\Programowanie-urzadzen-mobilnych-2022-3\\Runly\\Runly.Android\\Runly.Android.csproj",
-      "packagesPath": "C:\\Users\\BT\\.nuget\\packages\\",
-      "outputPath": "D:\\Dev\\Xamarin\\Programowanie-urzadzen-mobilnych-2022-3\\Runly\\Runly.Android\\obj\\",
+      "projectPath": "C:\\Users\\luksz\\Source\\Repos\\Programowanie-urzadzen-mobilnych-2022-3 AND\\Runly\\Runly.Android\\Runly.Android.csproj",
+      "packagesPath": "C:\\Users\\luksz\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\luksz\\Source\\Repos\\Programowanie-urzadzen-mobilnych-2022-3 AND\\Runly\\Runly.Android\\obj\\",
       "projectStyle": "PackageReference",
       "skipContentFileWrite": true,
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
       ],
       "configFilePaths": [
-        "C:\\Users\\BT\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\luksz\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
@@ -3934,8 +3934,8 @@
       "frameworks": {
         "monoandroid12.0": {
           "projectReferences": {
-            "D:\\Dev\\Xamarin\\Programowanie-urzadzen-mobilnych-2022-3\\Runly\\Runly\\Runly.csproj": {
-              "projectPath": "D:\\Dev\\Xamarin\\Programowanie-urzadzen-mobilnych-2022-3\\Runly\\Runly\\Runly.csproj"
+            "C:\\Users\\luksz\\Source\\Repos\\Programowanie-urzadzen-mobilnych-2022-3 AND\\Runly\\Runly\\Runly.csproj": {
+              "projectPath": "C:\\Users\\luksz\\Source\\Repos\\Programowanie-urzadzen-mobilnych-2022-3 AND\\Runly\\Runly\\Runly.csproj"
             }
           }
         }
@@ -3948,6 +3948,14 @@
             "target": "Package",
             "version": "[1.7.0, )"
           },
+          "Xamarin.Essentials": {
+            "target": "Package",
+            "version": "[1.7.0, )"
+          },
+          "Xamarin.Forms": {
+            "target": "Package",
+            "version": "[5.0.0.2515, )"
+          },
           "Xamarin.Forms": {
             "target": "Package",
             "version": "[5.0.0.2515, )"
@@ -3955,6 +3963,14 @@
           "Xamarin.Forms.Maps": {
             "target": "Package",
             "version": "[5.0.0.2515, )"
+          },
+          "Xamarin.Forms.Maps": {
+            "target": "Package",
+            "version": "[5.0.0.2515, )"
+          },
+          "sqlite-net-pcl": {
+            "target": "Package",
+            "version": "[1.8.116, )"
           },
           "sqlite-net-pcl": {
             "target": "Package",
