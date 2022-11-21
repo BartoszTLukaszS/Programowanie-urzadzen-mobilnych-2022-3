@@ -20,6 +20,7 @@
                        HorizontalOptions="CenterAndExpand" 
                        Margin="20"   />
             </Grid>
+            <Button x:Name="btn" Clicked="Button_Cliked" Text="Start" HeightRequest="70" />
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>
