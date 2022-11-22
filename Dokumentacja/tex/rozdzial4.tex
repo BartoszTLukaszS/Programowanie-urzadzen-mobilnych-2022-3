@@ -2,5 +2,378 @@
 \section{Implementacja}		%4
 %Wkleić szkielet kodu, wraz z komentarzami. Opisać zmienne, struktury do czego służą. Opisać procedury, metody co wykonują. Opisać nowe zdefiniowane klasy. Opisać dziedziczenie. Opisać nowo utworzone pliki za co odpowiadają.
 
+\subsection{Wybrane kody z objaśnieniami działania}		%4.1
 
+\subsubsection{Zakładka Historia} %4.1.1
 
+\hspace{0.60cm}Kod \ref{lst:listing-cpp} przedstawia sposób inicjalizacji połączenia z bazą danych SQLite:
+\begin{lstlisting}[caption=Połączenie z bazą danych, label={lst:listing-cpp}, language=C++]
+	public History()
+	{
+		InitializeComponent();
+		
+		_database = new SQLiteAsyncConnection(Path.Combine(Environment.
+		GetFolderPath(Environment.SpecialFolder.LocalApplication
+		Data), "trainingHistory.db3"));
+	}
+\end{lstlisting}
+
+Kod \ref{lst:listing-cpp2} przedstawia sposób wypisania danych na ekran:
+\begin{lstlisting}[caption=Wypisanie danych na ekran, label={lst:listing-cpp2}, language=C++]
+	protected override async void OnAppearing()
+	{
+		base.OnAppearing();
+		
+		//Wypisanie danych na ekran
+		collectionView.ItemsSource = await GetTrainingData();
+	}
+\end{lstlisting}
+
+Kod \ref{lst:listing-cpp3} przedstawia sposóB w jaki pobierane są dane z bazy danych:
+\begin{lstlisting}[caption=Pobranie danych z bazy, label={lst:listing-cpp3}, language=C++]
+	public async Task<List<TrainingData>> GetTrainingData()
+	{
+		var query = await _database.Table<TrainingData>().ToListAsync();
+		results = Enumerable.Reverse(query).ToList();
+		return results;
+	}
+\end{lstlisting}
+
+Kod \ref{lst:listing-cpp4} zawiera funkcję otwieracjącą widok statystyk i podsumowania:
+\begin{lstlisting}[caption=Otwieranie widoku statystyk i podsumowania, label={lst:listing-cpp4}, language=C++]
+	private async void OpenStatistics(object sender, EventArgs e)
+	{
+		var btn = (Button)sender;
+		await Navigation.PushAsync(new StatisticsView(btn.ClassId));
+	}
+\end{lstlisting}
+
+Kod \ref{lst:listing-cpp5} przedstawia sposób w jaki dane z bazy danych zostaną wypisane na ekran:
+\begin{lstlisting}[caption=Wypisanie danych z bazy danych na ekran, label={lst:listing-cpp5}, language=C++]
+	public async Task<List<TrainingData>> GetTrainingData()
+	{
+		var query = _database.Table<TrainingData>().Where(p => p.Id == buttonId);
+		var result =  await query.ToListAsync();
+		nazwa.Text = "Trening: " + result[0].DateDay;
+		
+		_databaseTraining = new SQLiteAsyncConnection(Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData), result[0].TrainingDatabase));
+		var locations = await _databaseTraining.Table<CurrentData>().ToListAsync();
+		
+		Polyline polyline = new Polyline();
+		polyline.StrokeColor = Color.FromHex("#192126");
+		polyline.StrokeWidth = 20;
+		foreach (var pos in locations)
+		polyline.Geopath.Add(new Position(pos.Latitude, pos.Longitude));
+		map.MapElements.Add(polyline);
+		
+		Position startPos = new Position(locations[0].Latitude, locations[0].Longitude);
+		map.MoveToRegion(MapSpan.FromCenterAndRadius(startPos, Distance.FromKilometers(1)));
+		
+		
+		dataStartu.Text = result[0].DateDay;
+		godzinaStartu.Text = result[0].DateTime;
+		dystans.Text = result[0].Distance;
+		czas.Text = result[0].Time;
+		calories.Text = result[0].Calories.ToString() + " cal";
+		avrSpeed.Text = result[0].AvrSpeed.ToString() + " km/h";
+		return result;
+	}
+\end{lstlisting}
+
+\subsubsection{Zakładka Trening} %4.1.2
+
+\hspace{0.60cm}Kod \ref{lst:listing-cpp6} przedstawia sposób inicjalizacji połączenia z bazą danych:
+\begin{lstlisting}[caption=Połączenie z bazą danych, label={lst:listing-cpp6}, language=C++]
+	public Training()
+	{
+		InitializeComponent();
+		
+		_database = new SQLiteAsyncConnection(Path.Combine(Environment.
+		GetFolderPath(Environment.SpecialFolder.
+		LocalApplicationData), "trainingHistory.db3"));
+		_database.CreateTableAsync<TrainingData>();
+		GetLocation();
+	}
+\end{lstlisting}
+
+Kod \ref{lst:listing-cpp7} zawiera funkcję pobierająca lokalizację:
+\begin{lstlisting}[caption=Pobranie lokalizacji, label={lst:listing-cpp7}, language=C++]
+	private async void GetLocation()
+	{
+		//pobranie lokalizacji
+		var request = new GeolocationRequest(GeolocationAccuracy.Best);
+		var location = await Geolocation.GetLocationAsync(request);
+		
+		if (location != null)
+		{
+			position = new Position(location.Latitude, location.Longitude);
+			
+			//przesuniecie widoku na lokalizacje przeciwnika
+			map.MoveToRegion(MapSpan.FromCenterAndRadius(position, Distance.
+			FromKilometers(0.5)));
+			
+			if (isTraining)
+			{   
+				//zapis danych lokalizacji
+				positionsList.Add(new PositionList { Location = location, TimeLasted = 
+					(hours * 3600 + mins * 60 + secs) });
+				await SaveCurrentData(new CurrentData
+				{
+					Latitude = location.Latitude,
+					Longitude = location.Longitude,
+					TimeLasted = (hours * 3600 + mins * 60 + secs)
+				});
+				UpdateInfo();
+			}
+			
+		}
+		
+		//pobranie lokalizacji wywolywane co 2 sekundy
+		await Task.Delay(2000);
+		GetLocation();
+		
+	}
+\end{lstlisting}
+
+Kod \ref{lst:listing-cpp8} wprowadza możliwość rozpoczęcia treningu:
+\begin{lstlisting}[caption=Rozpoczęcie treningu, label={lst:listing-cpp8}, language=C++]
+	private void StartTraining(object sender, EventArgs e)
+	{
+		btnStartF.IsVisible = false;
+		btnResumeF.IsVisible = false;
+		btnEndF.IsVisible = false;
+		btnStopF.IsVisible = true;
+		isTraining = true;
+		startDate = DateTime.Now;
+		
+		//baza danych lokalizacji w treningu
+		_databaseTraining = new SQLiteAsyncConnection(Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData), "training" + startDate.ToString("dd_MM_yyyy_HH_mm_ss") + ".db3"));
+		_databaseTraining.CreateTableAsync<CurrentData>();
+		
+		//inicjalizacja timera
+		timer = new Timer();
+		timer.Interval = 1000;
+		timer.Elapsed += Timer_Elapsed;
+		timer.Start();
+	}
+\end{lstlisting}
+
+Kod \ref{lst:listing-cpp9} zawiera funkcję liczącą sekundy, wywoływaną co sekundę:
+\begin{lstlisting}[caption=Liczenie sekund (co sekundę:), label={lst:listing-cpp9}, language=C++]
+	private void Timer_Elapsed(object sender, ElapsedEventArgs e)
+	{
+		secs++;
+		if (secs == 59)
+		{
+			mins++;
+			secs = 0;
+		}
+		if (mins == 59)
+		{
+			hours++;
+			mins = 0;
+		}
+		Device.BeginInvokeOnMainThread(() =>
+		{
+			timerValue.Text = string.Format("{0:00}:{1:00}:{2:00}", hours, mins, secs);
+		});
+	}
+\end{lstlisting}
+
+Kod \ref{lst:listing-cpp10} umożliwia zakończenie treningu oraz obsługę danych po odbytym treningu:
+\begin{lstlisting}[caption=Zakończenie treningu\, zapis danych do bazy i ich podsumowanie, label={lst:listing-cpp10}, language=C++]
+	private async void EndTraining(object sender, EventArgs e)
+	{
+		btnResumeF.IsVisible = false;
+		btnEndF.IsVisible = false;
+		btnStopF.IsVisible = false;
+		btnStartF.IsVisible = true;
+		
+		//zapis danych treningu do glownej bazy danych
+		await SaveTrainingData(new TrainingData
+		{
+			DateDay = startDate.ToString("dd/MM/yyyy"),
+			DateTime = startDate.ToString("HH:mm"),
+			Time = string.Format("{0:00}:{1:00}", (hours * 60 + mins), secs),
+			Distance = way.ToString() + " km",
+			Calories = caloriesBurned,
+			AvrSpeed = avrSpeed, 
+			TrainingDatabase = "training" + startDate.ToString("dd_MM_yyyy_HH_mm_ss") + ".db3"
+		});
+		
+		//otwarcie strony podsumowania treningu
+		await Navigation.PushAsync(new StatisticsView(CountTrainings().Result.ToString()));
+		
+		//wyzerowanie zmiennych pomiarowych
+		way = 0;
+		tempo = 0;
+		caloriesBurned = 0;
+		avrSpeed = 0;
+		speedSum = 0;
+		timerValue.Text = "00:00:00";
+		amountDistance.Text = "0";
+		amountCalories.Text = "0";
+		amountSpeed.Text = "0.0";
+		hours = 0;
+		mins = 0;
+		secs = 0;
+		map.MapElements.Clear();
+	}
+\end{lstlisting}
+
+Kod \ref{lst:listing-cpp11} zawiera funkcję aktualizującą informacje na ekranie:
+\begin{lstlisting}[caption=Aktualizowanie informacji na ekranie, label={lst:listing-cpp11}, language=C++]
+	 private void UpdateInfo()
+	{
+		//polyline rysuje trase na mapie
+		Polyline polyline = new Polyline();
+		polyline.StrokeColor = Color.FromHex("#192126");
+		polyline.StrokeWidth = 20;
+		int length = positionsList.Count - 1;
+		double tmpWay;
+		if (length > 1)
+		{
+			//ustawienie lini na dwie ostanie pozycje
+			polyline.Geopath.Add(new Position(positionsList[length - 1].Location.Latitude, positionsList[length - 1].Location.Longitude));
+			polyline.Geopath.Add(new Position(positionsList[length].Location.Latitude, positionsList[length].Location.Longitude));
+			//wywolanie linii na mapie
+			map.MapElements.Add(polyline);
+			
+			//obliczenia parametrow treningu
+			tmpWay = Location.CalculateDistance(positionsList[length].Location, positionsList[length - 1].Location, DistanceUnits.Kilometers);
+			way = Math.Round((way + tmpWay), 3);
+			tempo = (tmpWay / (positionsList[length].TimeLasted - positionsList[length - 1].TimeLasted)) * 3600;
+			tempo = Math.Round(tempo, 1);
+			speedSum += tempo * (positionsList[length].TimeLasted - positionsList[length - 1].TimeLasted);
+			avrSpeed = speedSum / (positionsList[length].TimeLasted);
+			avrSpeed = Math.Round(avrSpeed, 1);
+			//kalorie na minute = (MET * 3.5 * waga) / 200
+			//MET - ile razy wiecej kalorii spala przy danej aktywnosci w porowaniu do odpoczynku
+			caloriesBurned = ((avrSpeed * 3.5 * weight) / 200) * (((double)positionsList[length].TimeLasted) / 60);
+			caloriesBurned = Math.Round(caloriesBurned, 1);
+		}
+		
+		//wyswietlenie dystansu w okreslonym formacie zaleznym od dystansu
+		if (way < 1)
+		{
+			amountDistance.Text = (way * 1000).ToString();
+			distanceSize.Text = " m";
+		}
+		else if (way < 10)
+		{
+			amountDistance.Text = string.Format("{0:0.00}", way);
+			distanceSize.Text = " km";
+		}
+		else if (way < 100)
+		{
+			amountDistance.Text = string.Format("{0:00.0}", way);
+			distanceSize.Text = " km";
+		}
+		else
+		{
+			amountDistance.Text = string.Format("{0:000}", way);
+			distanceSize.Text = " km";
+		}
+		
+		//wyswietlenie predkosci w okreslonym formacie
+		if (tempo < 10)
+		amountSpeed.Text = string.Format("{0:0.0}", tempo);
+		else
+		amountSpeed.Text = string.Format("{0:00}", tempo);
+		//wyswietlenie spalonych kalorii
+		if (caloriesBurned < 10)
+		amountCalories.Text = caloriesBurned.ToString();
+		else
+		amountCalories.Text = string.Format("{0:00}", caloriesBurned);
+	}
+\end{lstlisting}
+
+Kod \ref{lst:listing-cpp12} wykonuje zapis danych treningu do bazy danych:
+\begin{lstlisting}[caption=Zapis danych do bazy danych, label={lst:listing-cpp12}, language=C++]
+	public Task<int> SaveTrainingData(TrainingData trainingData)      
+	{
+		return _database.InsertAsync(trainingData);
+	}
+\end{lstlisting}
+
+Kod \ref{lst:listing-cpp13} implementuje modułu Step\_Counter, wykorzystujący czujnik akcelerometr:
+\begin{lstlisting}[caption=Krakomierz i akcelerometr, label={lst:listing-cpp13}, language=C++]
+	public partial class StepCounter : ContentPage
+	{
+		//inicjalizacja listy przechowujacej liczbe krokow
+		List<double> accData = new List<double>();
+		int stepsNumber = 0;
+		DateTime czas = DateTime.Now;
+		TimeSpan interval = TimeSpan.FromSeconds(0.1);
+		
+		
+		public StepCounter()
+		{
+			InitializeComponent();
+			
+			Accelerometer.ReadingChanged += Accelerometer_ReadingChanged;
+		}
+		
+		//implementacja modulu akcelerometra
+		void Accelerometer_ReadingChanged(object sender, AccelerometerChangedEventArgs args)
+		{
+			if (DateTime.Now - czas > interval)
+			{
+				czas = DateTime.Now;
+				var xVal = args.Reading.Acceleration.X * 10;
+				var yVal = args.Reading.Acceleration.Y * 10;
+				var zVal = args.Reading.Acceleration.Z * 10;
+				var accValue = Math.Sqrt(xVal * xVal + yVal * yVal + zVal * zVal) - 10;
+				if (accData.Count > 240)
+				accData.RemoveAt(0);
+				accData.Add(accValue);
+				
+				//petla liczaca kroki
+				if (accData.Count > 1)
+				{
+					for (int i = 1; i < accData.Count - 1; i++)
+					{
+						if (accData[i] > 1)
+						{
+							if (accData[i] > accData[i - 1] && accData[i] > accData[i + 1])
+							{
+								stepsNumber++;
+								accData.Clear();
+							}
+						}
+						
+					}
+				}
+				amountSteps.Text = stepsNumber.ToString();
+			}
+		}
+\end{lstlisting}
+
+Kod \ref{lst:listing-cpp14} zawiera funkcję dającą możliwość rozpoczęcia i zakończenia liczenia kroków:
+\begin{lstlisting}[caption=Rozpoczęcia i zakończenie liczenia kroków, label={lst:listing-cpp14}, language=C++]
+	void Button_Cliked(object sender, EventArgs e) 
+	{
+		try
+		{
+			if (Accelerometer.IsMonitoring)
+			{
+				Accelerometer.Stop();
+				btn.Text = "Start";
+			}   
+			else
+			{
+				Accelerometer.Start(SensorSpeed.UI);
+				btn.Text = "Stop";
+			}
+			
+		}
+		catch (FeatureNotSupportedException fnsEx)
+		{
+			// Not supported on device
+		}
+		catch (Exception ex)
+		{
+			// Something else went wrong
+		}
+	}
+\end{lstlisting}

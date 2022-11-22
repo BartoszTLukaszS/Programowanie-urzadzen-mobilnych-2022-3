@@ -13,6 +13,7 @@ namespace Runly.Pages
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class StepCounter : ContentPage
     {
+        //inicjalizacja listy przechowujacej liczbe krokow
         List<double> accData = new List<double>();
         int stepsNumber = 0;
         DateTime czas = DateTime.Now;
@@ -26,6 +27,7 @@ namespace Runly.Pages
             Accelerometer.ReadingChanged += Accelerometer_ReadingChanged;
         }
 
+        //implementacja modul akcelerometra
         void Accelerometer_ReadingChanged(object sender, AccelerometerChangedEventArgs args)
         {
             if (DateTime.Now - czas > interval)
@@ -39,6 +41,7 @@ namespace Runly.Pages
                     accData.RemoveAt(0);
                 accData.Add(accValue);
 
+                //petla liczaca kroki
                 if (accData.Count > 1)
                 {
                     for (int i = 1; i < accData.Count - 1; i++)
@@ -58,6 +61,7 @@ namespace Runly.Pages
             }
         }
 
+        //rozpoczecie i zakonczenie liczenia krokow
         void Button_Cliked(object sender, EventArgs e) 
         {
             try

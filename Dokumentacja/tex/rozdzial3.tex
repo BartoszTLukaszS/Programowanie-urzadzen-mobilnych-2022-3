@@ -4,150 +4,69 @@
 
 \subsection{Przygotowanie narzędzi (Git, Visual Studio)}		%3.1
 
-\hspace{0.60cm}Pierwszym i oczywistym krokiem, który musimy wykonać jest przygotowanie właściwych technologii i środowisk, które posłużą do tworzenia naszego projektu. Jako środowisko programistyczne wybrano Visual Studio 2022 i dostępną na nim wspomnianą wcześniej platformę Xamarin.Forms. W celu instalacji tego narzędzia, pobieramy plik instalacyjny ze strony Microsoftu. Podczas instalacji, w menedżerze dodatkowych pakietów, wybieramy pakiet \textit{Mobile developement with .NET}, zaznaczając też opcjonalne dodatki w zależności od wymagań (np. Xamarin, emulator Androida itd.). Środowisko Visual Studio posiada zintegrowany system kontroli wersji oprogramowania Git, który będzie wspomagał naszą pracę. 
+\subsubsection{Visual Studio} %3.1.1
+\hspace{0.60cm}Pierwszym i oczywistym krokiem, który musimy wykonać jest przygotowanie właściwych technologii i środowisk, które posłużą do tworzenia naszego projektu. Jako środowisko programistyczne wybrano Visual Studio 2022 i dostępną na nim wspomnianą wcześniej platformę Xamarin.Forms. W celu instalacji tego narzędzia, pobieramy plik instalacyjny ze strony Microsoftu\footnote{Plik instalacyjny na stronie  https://visualstudio.microsoft.com/pl/vs\cite{www1}.}. Podczas instalacji, w menedżerze dodatkowych pakietów, wybieramy pakiet \textit{Mobile developement with .NET}, zaznaczając też opcjonalne dodatki w zależności od wymagań (np. Xamarin, emulator Androida itd.). Środowisko Visual Studio posiada zintegrowany system kontroli wersji oprogramowania Git, który będzie wspomagał naszą pracę. 
 
-\hspace{0.60cm}Na stronie Github stworzone zostało zdalne repozytorium, do którego wysyłane będą kolejne wersje naszego projektu, z możliwością kontrybucji ze strony członków zespołu programistów. 
+\subsubsection{Git} %3.1.2
+Na stronie Github stworzone zostało zdalne repozytorium, do którego wysyłane będą kolejne wersje naszego projektu, z możliwością kontrybucji ze strony członków zespołu programistów. Lokalnie, na maszynach programistów zainstalowano dodatkowe narzędzie jakim jest desktopowa aplikacja Git for Windows, która dostarcza emulację BASH wykorzystywaną do uruchamiania Git'a z wiersza poleceń. Jest to duże udogodnienie dla osób, które czują się pewniej pracując z terminalem systemu Linux. Plik instalacyjny można pobrać ze strony\footnote{Plik instalacyjny na stronie https://git-scm.com/download/win\cite{www2}.}.
 
-\subsection{Wybrane kody i pseudokody z objaśnieniami działania}		%3.2
+\subsection{Szkice layoutów}		%3.2
 
-\subsubsection{Zakładka Historia} %3.2.1
+\subsubsection{Zakładka Kroki} %3.2.1
 
-\hspace{0.60cm}Inicjalizacja połączenia z bazą danych:
-\begin{verbatim}
-	public History()
-	{
-		InitializeComponent();
-		
-		_database = new SQLiteAsyncConnection(Path.Combine(Environment.
-		GetFolderPath(Environment.SpecialFolder.LocalApplication
-		Data), "trainingHistory.db3"));
-	}
-\end{verbatim}
+\hspace{0.60cm}W zakładce Kroki rys. \ref{rys:rysunek001a} (s. \pageref{rys:rysunek001a}) użytkownik ma możliwość rozpoczęcia liczenia wykonanych kroków.
 
-\hspace{0.60cm}Wypisanie danych na ekran:
-\begin{verbatim}
-	protected override async void OnAppearing()
-	{
-		base.OnAppearing();
-		
-		//Wypisanie danych na ekran
-		collectionView.ItemsSource = await GetTrainingData();
-	}
-\end{verbatim}
+\begin{figure}[!htb]
+	\centering
+	\includegraphics[width=.2\linewidth]{rys/kroki.png}
+	\caption{Layout krokomierza}
+	\label{rys:rysunek001a}
+\end{figure}
 
-\hspace{0.60cm}Pobranie danych z bazy danych:
-\begin{verbatim}
-	public async Task<List<TrainingData>> GetTrainingData()
-	{
-		var query = await _database.Table<TrainingData>().ToListAsync();
-		results = Enumerable.Reverse(query).ToList();
-		return results;
-	}
-\end{verbatim}
-
-\hspace{0.60cm}Funkcja otwieracjąca widok statystyk, podsumowania:
-\begin{verbatim}
-	private async void OpenStatistics(object sender, EventArgs e)
-	{
-		var btn = (Button)sender;
-		await Navigation.PushAsync(new StatisticsView(btn.ClassId));
-	}
-\end{verbatim}
+Liczenie kroków wykonuje się przy wykorzystaniu modułu akcelerometra..
 
 \subsubsection{Zakładka Trening} %3.2.2
 
-\hspace{0.60cm}Połączenie z bazą danych:
-\begin{verbatim}
-	public Training()
-	{
-		InitializeComponent();
-		
-		//Połączenie z bazą danych
-		_database = new SQLiteAsyncConnection(Path.Combine(Environment.
-		GetFolderPath(Environment.SpecialFolder.
-		LocalApplicationData), "trainingHistory.db3"));
-		_database.CreateTableAsync<TrainingData>();
-		GetLocation();
-	}
-\end{verbatim}
+\hspace{0.60cm}W zakładce Trening rys. \ref{rys:rysunek001b} (s. \pageref{rys:rysunek001b}) użytkownik ma możliwość rozpoczęcia treningu. Zaczyna się odliczanie i wyświetlanie na ekranie bieżącego czasu odbywanego treningu, pokonany dystans w metrach, bieżąca prędkość oraz teoretyczna ilość spalonych kalorii. Na środkowej części ekranu wyświetlana zostaje, przy wykorzystaniu modułów GPS oraz  Map Google bieżąca lokalizacja użytkownika. Za pomocą polilinii rysowana jest trasa, którą udaje się użytkownik. 
 
-\hspace{0.60cm}Funkcja pobierająca lokalizację:
-\begin{verbatim}
-	private async void GetLocation()
-	{
-		//Pobranie lokalizacji
-		var request = new GeolocationRequest(GeolocationAccuracy.Best);
-		var location = await Geolocation.GetLocationAsync(request);
-		
-		if (location != null)
-		{
-			position = new Position(location.Latitude, location.Longitude);
-			
-			//Przesunięcie widoku na lokalizację przeciwnika
-			map.MoveToRegion(MapSpan.FromCenterAndRadius(position, Distance.
-			FromKilometers(0.5)));
-			
-			if (isTraining)
-			{   
-				//Zapis danych lokalizacji
-				positionsList.Add(new PositionList { Location = location, TimeLasted = 
-					(hours * 3600 + mins * 60 + secs) });
-				await SaveCurrentData(new CurrentData
-				{
-					Latitude = location.Latitude,
-					Longitude = location.Longitude,
-					TimeLasted = (hours * 3600 + mins * 60 + secs)
-				});
-				UpdateInfo();
-			}
-			
-		}
-		
-		//Pobranie lokalizacji wywoływane co 2 sekundy
-		await Task.Delay(2000);
-		GetLocation();
-		
-	}
-\end{verbatim}
+\begin{figure}[!htb]
+	\centering
+	\begin{minipage}{.5\textwidth}
+		\centering
+		\includegraphics[width=.4\linewidth]{rys/trening.png}
+		\caption{Layout treningu}
+		\label{rys:rysunek001b}
+	\end{minipage}%
+	\begin{minipage}{.5\textwidth}
+		\centering
+		\includegraphics[width=.4\linewidth]{rys/trening2.png}
+		\caption{Ekran podsumowania}
+		\label{rys:rysunek001c}
+	\end{minipage}
+\end{figure}
 
-\hspace{0.60cm}Wyświetlenie dystansu w określonym formacie zależnym od dystansu:
-\begin{verbatim}
-	if (way < 1)
-	{
-		amountDistance.Text = (way * 1000).ToString();
-		distanceSize.Text = " m";
-	}
-	else if (way < 10)
-	{
-		amountDistance.Text = string.Format("{0:0.00}", way);
-		distanceSize.Text = " km";
-	}
-	else if (way < 100)
-	{
-		amountDistance.Text = string.Format("{0:00.0}", way);
-		distanceSize.Text = " km";
-	}
-	else
-	{
-		amountDistance.Text = string.Format("{0:000}", way);
-		distanceSize.Text = " km";
-	}
-\end{verbatim}
+Po zakończeniu treningu, w tej samej zakładce, wyświetlony zostaje ekran zawierający podsumowanie odbytego treningu. Jak pokazano na rys. \ref{rys:rysunek001c} (s. \pageref{rys:rysunek001c}), podsumowanie zawiera datę i czas rozpoczęcia treningu, przebyty dystans, czas treningu, spalone kalorie oraz średnią prędkość z jaką poruszał się użytkownik. 
 
-\hspace{0.60cm}Zapisanie danych do bazy danych:
-\begin{verbatim}
-	public Task<int> SaveTrainingData(TrainingData trainingData)      
-	{
-		return _database.InsertAsync(trainingData);
-	}
-	
-	public Task<int> CountTrainings()
-	{
-		return _database.Table<TrainingData>().CountAsync();
-	}
-	
-	public Task<int> SaveCurrentData(CurrentData currentPosition)
-	{
-		return _databaseTraining.InsertAsync(currentPosition);
-	}
-\end{verbatim}
+\subsubsection{Zakładka Historia} %3.2.3
+
+\hspace{0.60cm}W zakładce Historia, po zakończeniu kolejnych treningów, do bazy danych zapisywane są rekordy zawierające dane dotyczące odbytych w przeszłości treningów wraz z podstawywymi danymi jak data, czas oraz statystyki, co pokazano na rys. \ref{rys:rysunek001d} (s. \pageref{rys:rysunek001d}). Dane po zakończeniu treningu są najpierw zapisywane do bazy danych SQLite, następnie wyświetlane w zakładce Historia od najnowszego do najstarszego.
+
+\begin{figure}[!htb]
+	\centering
+	\includegraphics[width=.2\linewidth]{rys/historia.png}
+	\caption{Layout historii treningów}
+	\label{rys:rysunek001d}
+\end{figure}
+
+Wykorzystana w nim zostaje odpowiednia funkcja otwierająca widok statystyk i podsumowania.
+
+\subsubsection{Zakładka Ustawienia} %3.2.4
+
+\hspace{0.60cm}W zakładce Ustawienia rys. \ref{rys:rysunek001e} (s. \pageref{rys:rysunek001e}) użytkownik ma możliwość konfiguracji własnego konta użytkownika, swoich danych fizycznych oraz wieku, na podstawie których obliczane zostają statystyki traningu jak np. spalone kalorie. 
+
+\begin{figure}[!htb]
+	\centering
+	\includegraphics[width=.2\linewidth]{rys/ustawienia.png}
+	\caption{Layout ustawień i opcji}
+	\label{rys:rysunek001e}
+\end{figure}

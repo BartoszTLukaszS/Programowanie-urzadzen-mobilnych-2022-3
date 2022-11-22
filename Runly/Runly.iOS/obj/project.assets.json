@@ -1696,24 +1696,24 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\BT\\.nuget\\packages\\": {},
+    "C:\\Users\\luksz\\.nuget\\packages\\": {},
     "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\Dev\\repos\\Programowanie-urzadzen-mobilnych-2022-3\\Runly\\Runly.iOS\\Runly.iOS.csproj",
+      "projectUniqueName": "C:\\Users\\luksz\\source\\repos\\Programowanie-urzadzen-mobilnych-2022-3 xor1\\Runly\\Runly.iOS\\Runly.iOS.csproj",
       "projectName": "Runly.iOS",
-      "projectPath": "D:\\Dev\\repos\\Programowanie-urzadzen-mobilnych-2022-3\\Runly\\Runly.iOS\\Runly.iOS.csproj",
-      "packagesPath": "C:\\Users\\BT\\.nuget\\packages\\",
-      "outputPath": "D:\\Dev\\repos\\Programowanie-urzadzen-mobilnych-2022-3\\Runly\\Runly.iOS\\obj\\",
+      "projectPath": "C:\\Users\\luksz\\source\\repos\\Programowanie-urzadzen-mobilnych-2022-3 xor1\\Runly\\Runly.iOS\\Runly.iOS.csproj",
+      "packagesPath": "C:\\Users\\luksz\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\luksz\\source\\repos\\Programowanie-urzadzen-mobilnych-2022-3 xor1\\Runly\\Runly.iOS\\obj\\",
       "projectStyle": "PackageReference",
       "skipContentFileWrite": true,
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
       ],
       "configFilePaths": [
-        "C:\\Users\\BT\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\luksz\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
@@ -1727,8 +1727,8 @@
       "frameworks": {
         "xamarinios10": {
           "projectReferences": {
-            "D:\\Dev\\repos\\Programowanie-urzadzen-mobilnych-2022-3\\Runly\\Runly\\Runly.csproj": {
-              "projectPath": "D:\\Dev\\repos\\Programowanie-urzadzen-mobilnych-2022-3\\Runly\\Runly\\Runly.csproj"
+            "C:\\Users\\luksz\\source\\repos\\Programowanie-urzadzen-mobilnych-2022-3 xor1\\Runly\\Runly\\Runly.csproj": {
+              "projectPath": "C:\\Users\\luksz\\source\\repos\\Programowanie-urzadzen-mobilnych-2022-3 xor1\\Runly\\Runly\\Runly.csproj"
             }
           }
         }

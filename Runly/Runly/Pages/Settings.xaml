@@ -18,7 +18,7 @@
                            VerticalOptions="CenterAndExpand" 
                            HorizontalOptions="CenterAndExpand" />
                 </Frame>
-                <Label Grid.Row="1" Text="User's Name" HorizontalOptions="Center" FontAttributes="Bold" TextColor="#192126" FontSize="20" Margin="10" />
+                <Label Grid.Row="1" Text="Nazwa użytkownika" HorizontalOptions="Center" FontAttributes="Bold" TextColor="#192126" FontSize="20" Margin="10" />
             </Grid>
 
             <Grid Margin="10" Padding="0" RowSpacing="10">

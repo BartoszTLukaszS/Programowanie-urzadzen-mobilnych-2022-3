@@ -10,15 +10,15 @@
                        VerticalOptions="CenterAndExpand" 
                        HorizontalOptions="CenterAndExpand" 
                        HeightRequest="200" 
-                       Margin="20" />
+                       Margin="25" />
                 <Label Grid.Row="1" 
                        x:Name="amountSteps"
-                       Text="2137"
+                       Text="Kroki"
                        TextColor="#192126" 
-                       FontSize="50" 
+                       FontSize="30" 
                        FontAttributes="Bold"
                        HorizontalOptions="CenterAndExpand" 
-                       Margin="20"   />
+                       Margin="25"   />
             </Grid>
             <Button x:Name="btn" Clicked="Button_Cliked" Text="Start" HeightRequest="70" />
         </StackLayout>
