@@ -1,6 +1,9 @@
 Runly.Droid.MainActivity, Runly.Android;crc645c244758afd4fac0.MainActivity
 Runly.Droid.MainActivity;crc645c244758afd4fac0.MainActivity
 runly.droid.MainActivity;crc645c244758afd4fac0.MainActivity
+Runly.Droid.SplashActivity, Runly.Android;crc645c244758afd4fac0.SplashActivity
+Runly.Droid.SplashActivity;crc645c244758afd4fac0.SplashActivity
+runly.droid.SplashActivity;crc645c244758afd4fac0.SplashActivity
 AndroidX.Activity.IOnBackPressedDispatcherOwner, Xamarin.AndroidX.Activity;androidx.activity.OnBackPressedDispatcherOwner
 AndroidX.Activity.IOnBackPressedDispatcherOwner;androidx.activity.OnBackPressedDispatcherOwner
 androidx.activity.OnBackPressedDispatcherOwner;androidx.activity.OnBackPressedDispatcherOwner
