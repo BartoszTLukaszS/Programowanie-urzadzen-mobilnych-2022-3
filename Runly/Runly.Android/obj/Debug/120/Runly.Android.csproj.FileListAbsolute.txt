@@ -3615,22 +3615,6 @@ D:\Dev\repos\Programowanie-urzadzen-mobilnych-2022-3\Runly\Runly.Android\obj\Deb
 D:\Dev\repos\Programowanie-urzadzen-mobilnych-2022-3\Runly\Runly.Android\obj\Debug\120\android\assets\System.Buffers.dll
 D:\Dev\repos\Programowanie-urzadzen-mobilnych-2022-3\Runly\Runly.Android\obj\Debug\120\android\assets\System.Memory.dll
 D:\Dev\repos\Programowanie-urzadzen-mobilnych-2022-3\Runly\Runly.Android\obj\Debug\120\android\assets\System.Runtime.CompilerServices.Unsafe.dll
-D:\Dev\repos\Programowanie-urzadzen-mobilnych-2022-3\Runly\Runly.Android\obj\Debug\120\android\typemaps.x86.ll
-D:\Dev\repos\Programowanie-urzadzen-mobilnych-2022-3\Runly\Runly.Android\obj\Debug\120\android\typemaps.x86_64.ll
-D:\Dev\repos\Programowanie-urzadzen-mobilnych-2022-3\Runly\Runly.Android\obj\Debug\120\android\environment.x86.ll
-D:\Dev\repos\Programowanie-urzadzen-mobilnych-2022-3\Runly\Runly.Android\obj\Debug\120\android\environment.x86_64.ll
-D:\Dev\repos\Programowanie-urzadzen-mobilnych-2022-3\Runly\Runly.Android\obj\Debug\120\android\compressed_assemblies.x86.ll
-D:\Dev\repos\Programowanie-urzadzen-mobilnych-2022-3\Runly\Runly.Android\obj\Debug\120\android\compressed_assemblies.x86_64.ll
-D:\Dev\repos\Programowanie-urzadzen-mobilnych-2022-3\Runly\Runly.Android\obj\Debug\120\android\typemaps.x86.o
-D:\Dev\repos\Programowanie-urzadzen-mobilnych-2022-3\Runly\Runly.Android\obj\Debug\120\android\typemaps.x86_64.o
-D:\Dev\repos\Programowanie-urzadzen-mobilnych-2022-3\Runly\Runly.Android\obj\Debug\120\android\environment.x86.o
-D:\Dev\repos\Programowanie-urzadzen-mobilnych-2022-3\Runly\Runly.Android\obj\Debug\120\android\environment.x86_64.o
-D:\Dev\repos\Programowanie-urzadzen-mobilnych-2022-3\Runly\Runly.Android\obj\Debug\120\android\compressed_assemblies.x86.o
-D:\Dev\repos\Programowanie-urzadzen-mobilnych-2022-3\Runly\Runly.Android\obj\Debug\120\android\compressed_assemblies.x86_64.o
-D:\Dev\repos\Programowanie-urzadzen-mobilnych-2022-3\Runly\Runly.Android\obj\Debug\120\android\jni_remap.x86.o
-D:\Dev\repos\Programowanie-urzadzen-mobilnych-2022-3\Runly\Runly.Android\obj\Debug\120\android\jni_remap.x86_64.o
-D:\Dev\repos\Programowanie-urzadzen-mobilnych-2022-3\Runly\Runly.Android\obj\Debug\120\app_shared_libraries\x86\libxamarin-app.so
-D:\Dev\repos\Programowanie-urzadzen-mobilnych-2022-3\Runly\Runly.Android\obj\Debug\120\app_shared_libraries\x86_64\libxamarin-app.so
 C:\Users\luksz\source\repos\Programowanie-urzadzen-mobilnych-2022-3 xor1\Runly\Runly.Android\bin\Debug\Runly.Android.dll
 C:\Users\luksz\source\repos\Programowanie-urzadzen-mobilnych-2022-3 xor1\Runly\Runly.Android\bin\Debug\Runly.Android.pdb
 C:\Users\luksz\source\repos\Programowanie-urzadzen-mobilnych-2022-3 xor1\Runly\Runly.Android\bin\Debug\com.companyname.runly.apk
@@ -4376,3 +4360,19 @@ C:\Users\luksz\source\repos\Programowanie-urzadzen-mobilnych-2022-3 xor1\Runly\R
 C:\Users\luksz\source\repos\Programowanie-urzadzen-mobilnych-2022-3 xor1\Runly\Runly.Android\obj\Debug\120\stamp\_GenerateJavaStubs.stamp
 C:\Users\luksz\source\repos\Programowanie-urzadzen-mobilnych-2022-3 xor1\Runly\Runly.Android\obj\Debug\120\stamp\_GeneratePackageManagerJava.stamp
 C:\Users\luksz\source\repos\Programowanie-urzadzen-mobilnych-2022-3 xor1\Runly\Runly.Android\obj\Debug\120\stamp\_ResolveLibraryProjectImports.stamp
+D:\Dev\repos\Programowanie-urzadzen-mobilnych-2022-3\Runly\Runly.Android\obj\Debug\120\android\typemaps.x86.ll
+D:\Dev\repos\Programowanie-urzadzen-mobilnych-2022-3\Runly\Runly.Android\obj\Debug\120\android\typemaps.x86_64.ll
+D:\Dev\repos\Programowanie-urzadzen-mobilnych-2022-3\Runly\Runly.Android\obj\Debug\120\android\environment.x86.ll
+D:\Dev\repos\Programowanie-urzadzen-mobilnych-2022-3\Runly\Runly.Android\obj\Debug\120\android\environment.x86_64.ll
+D:\Dev\repos\Programowanie-urzadzen-mobilnych-2022-3\Runly\Runly.Android\obj\Debug\120\android\compressed_assemblies.x86.ll
+D:\Dev\repos\Programowanie-urzadzen-mobilnych-2022-3\Runly\Runly.Android\obj\Debug\120\android\compressed_assemblies.x86_64.ll
+D:\Dev\repos\Programowanie-urzadzen-mobilnych-2022-3\Runly\Runly.Android\obj\Debug\120\android\typemaps.x86.o
+D:\Dev\repos\Programowanie-urzadzen-mobilnych-2022-3\Runly\Runly.Android\obj\Debug\120\android\typemaps.x86_64.o
+D:\Dev\repos\Programowanie-urzadzen-mobilnych-2022-3\Runly\Runly.Android\obj\Debug\120\android\environment.x86.o
+D:\Dev\repos\Programowanie-urzadzen-mobilnych-2022-3\Runly\Runly.Android\obj\Debug\120\android\environment.x86_64.o
+D:\Dev\repos\Programowanie-urzadzen-mobilnych-2022-3\Runly\Runly.Android\obj\Debug\120\android\compressed_assemblies.x86.o
+D:\Dev\repos\Programowanie-urzadzen-mobilnych-2022-3\Runly\Runly.Android\obj\Debug\120\android\compressed_assemblies.x86_64.o
+D:\Dev\repos\Programowanie-urzadzen-mobilnych-2022-3\Runly\Runly.Android\obj\Debug\120\android\jni_remap.x86.o
+D:\Dev\repos\Programowanie-urzadzen-mobilnych-2022-3\Runly\Runly.Android\obj\Debug\120\android\jni_remap.x86_64.o
+D:\Dev\repos\Programowanie-urzadzen-mobilnych-2022-3\Runly\Runly.Android\obj\Debug\120\app_shared_libraries\x86\libxamarin-app.so
+D:\Dev\repos\Programowanie-urzadzen-mobilnych-2022-3\Runly\Runly.Android\obj\Debug\120\app_shared_libraries\x86_64\libxamarin-app.so

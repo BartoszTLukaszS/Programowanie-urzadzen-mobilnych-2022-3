@@ -6,30 +6,28 @@
 
 \subsubsection{Zakładka Historia} %4.1.1
 
-\hspace{0.60cm}Kod \ref{lst:listing-cpp} przedstawia sposób inicjalizacji połączenia z bazą danych SQLite:
+\hspace{0.60cm}Listing \ref{lst:listing-cpp} przedstawia sposób inicjalizacji połączenia z bazą danych SQLite:
 \begin{lstlisting}[caption=Połączenie z bazą danych, label={lst:listing-cpp}, language=C++]
 	public History()
 	{
-		InitializeComponent();
-		
+		InitializeComponent();		
 		_database = new SQLiteAsyncConnection(Path.Combine(Environment.
 		GetFolderPath(Environment.SpecialFolder.LocalApplication
 		Data), "trainingHistory.db3"));
 	}
 \end{lstlisting}
 
-Kod \ref{lst:listing-cpp2} przedstawia sposób wypisania danych na ekran:
+Listing \ref{lst:listing-cpp2} przedstawia metodę wypisania danych na ekran:
 \begin{lstlisting}[caption=Wypisanie danych na ekran, label={lst:listing-cpp2}, language=C++]
 	protected override async void OnAppearing()
 	{
-		base.OnAppearing();
-		
+		base.OnAppearing();		
 		//Wypisanie danych na ekran
 		collectionView.ItemsSource = await GetTrainingData();
 	}
 \end{lstlisting}
 
-Kod \ref{lst:listing-cpp3} przedstawia sposóB w jaki pobierane są dane z bazy danych:
+Listing \ref{lst:listing-cpp3} przedstawia metodę do pobrania danych z bazy danych:
 \begin{lstlisting}[caption=Pobranie danych z bazy, label={lst:listing-cpp3}, language=C++]
 	public async Task<List<TrainingData>> GetTrainingData()
 	{
@@ -39,7 +37,7 @@ Kod \ref{lst:listing-cpp3} przedstawia sposóB w jaki pobierane są dane z bazy 
 	}
 \end{lstlisting}
 
-Kod \ref{lst:listing-cpp4} zawiera funkcję otwieracjącą widok statystyk i podsumowania:
+Listing \ref{lst:listing-cpp4} zawiera funkcję otwieracjącą widok statystyk i podsumowania:
 \begin{lstlisting}[caption=Otwieranie widoku statystyk i podsumowania, label={lst:listing-cpp4}, language=C++]
 	private async void OpenStatistics(object sender, EventArgs e)
 	{
@@ -48,13 +46,12 @@ Kod \ref{lst:listing-cpp4} zawiera funkcję otwieracjącą widok statystyk i pod
 	}
 \end{lstlisting}
 
-Kod \ref{lst:listing-cpp5} przedstawia sposób w jaki dane z bazy danych zostaną wypisane na ekran:
+Listing \ref{lst:listing-cpp5} przedstawia sposób w jaki dane z bazy danych zostaną wypisane na~ekran. Na początku funkcji nawiązujemy połączenie oraz pobieramy dane z bazy danych. Od lini 9 rysujemy przebytą trasę na mapie. Od lini 19 wypisujemy pobrane dane na ekranie.
 \begin{lstlisting}[caption=Wypisanie danych z bazy danych na ekran, label={lst:listing-cpp5}, language=C++]
 	public async Task<List<TrainingData>> GetTrainingData()
 	{
 		var query = _database.Table<TrainingData>().Where(p => p.Id == buttonId);
 		var result =  await query.ToListAsync();
-		nazwa.Text = "Trening: " + result[0].DateDay;
 		
 		_databaseTraining = new SQLiteAsyncConnection(Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData), result[0].TrainingDatabase));
 		var locations = await _databaseTraining.Table<CurrentData>().ToListAsync();
@@ -69,7 +66,7 @@ Kod \ref{lst:listing-cpp5} przedstawia sposób w jaki dane z bazy danych zostan�
 		Position startPos = new Position(locations[0].Latitude, locations[0].Longitude);
 		map.MoveToRegion(MapSpan.FromCenterAndRadius(startPos, Distance.FromKilometers(1)));
 		
-		
+		nazwa.Text = "Trening: " + result[0].DateDay;
 		dataStartu.Text = result[0].DateDay;
 		godzinaStartu.Text = result[0].DateTime;
 		dystans.Text = result[0].Distance;
@@ -82,7 +79,7 @@ Kod \ref{lst:listing-cpp5} przedstawia sposób w jaki dane z bazy danych zostan�
 
 \subsubsection{Zakładka Trening} %4.1.2
 
-\hspace{0.60cm}Kod \ref{lst:listing-cpp6} przedstawia sposób inicjalizacji połączenia z bazą danych:
+\hspace{0.60cm}Listing \ref{lst:listing-cpp6} przedstawia sposób inicjalizacji połączenia z bazą danych, lub utworzenia jej w przypadku pierwszego uruchomienia.
 \begin{lstlisting}[caption=Połączenie z bazą danych, label={lst:listing-cpp6}, language=C++]
 	public Training()
 	{
@@ -96,7 +93,8 @@ Kod \ref{lst:listing-cpp5} przedstawia sposób w jaki dane z bazy danych zostan�
 	}
 \end{lstlisting}
 
-Kod \ref{lst:listing-cpp7} zawiera funkcję pobierająca lokalizację:
+Listing \ref{lst:listing-cpp7} zawiera funkcję pobierająca lokalizację. Od lini 4 pobieramy aktualne dane lokalizacji użytkownika. Linia 12 ustawia widok na lokalizację użytkownika. Od~lini 15 zapisujemy pobrane wcześniej dane do bazy danych.
+W lini 26 wywołujemy funkcję aktualizującą dane na ekranie. Na końcu po dwóch sekundach wywołujemy znów tą samą metodę.
 \begin{lstlisting}[caption=Pobranie lokalizacji, label={lst:listing-cpp7}, language=C++]
 	private async void GetLocation()
 	{
@@ -124,8 +122,7 @@ Kod \ref{lst:listing-cpp7} zawiera funkcję pobierająca lokalizację:
 					TimeLasted = (hours * 3600 + mins * 60 + secs)
 				});
 				UpdateInfo();
-			}
-			
+			}			
 		}
 		
 		//pobranie lokalizacji wywolywane co 2 sekundy
@@ -135,7 +132,7 @@ Kod \ref{lst:listing-cpp7} zawiera funkcję pobierająca lokalizację:
 	}
 \end{lstlisting}
 
-Kod \ref{lst:listing-cpp8} wprowadza możliwość rozpoczęcia treningu:
+Listing \ref{lst:listing-cpp8} wprowadza możliwość rozpoczęcia treningu. Na początku funkcji ustawiamy widoczność odpowiedniego przycisku. W lini 11 tworzymy bazę danych dla lokalizacji. Od lini 15 tworzymy timer liczący czas treningu.
 \begin{lstlisting}[caption=Rozpoczęcie treningu, label={lst:listing-cpp8}, language=C++]
 	private void StartTraining(object sender, EventArgs e)
 	{
@@ -158,7 +155,7 @@ Kod \ref{lst:listing-cpp8} wprowadza możliwość rozpoczęcia treningu:
 	}
 \end{lstlisting}
 
-Kod \ref{lst:listing-cpp9} zawiera funkcję liczącą sekundy, wywoływaną co sekundę:
+Listing \ref{lst:listing-cpp9} zawiera funkcję liczącą sekundy, wywoływaną co sekundę:
 \begin{lstlisting}[caption=Liczenie sekund (co sekundę:), label={lst:listing-cpp9}, language=C++]
 	private void Timer_Elapsed(object sender, ElapsedEventArgs e)
 	{
@@ -180,7 +177,7 @@ Kod \ref{lst:listing-cpp9} zawiera funkcję liczącą sekundy, wywoływaną co s
 	}
 \end{lstlisting}
 
-Kod \ref{lst:listing-cpp10} umożliwia zakończenie treningu oraz obsługę danych po odbytym treningu:
+Listing \ref{lst:listing-cpp10} umożliwia zakończenie treningu oraz obsługę danych po odbytym treningu. Na początku funkcji ustawiamy widoczność odpowiedniego przycisku. Od lini 9 następuje zapis danych treningu do bazy danych. Na końcu od linni 24 następuje wyzerowanie danych treningu, oraz wyczyszczenie mapy.
 \begin{lstlisting}[caption=Zakończenie treningu\, zapis danych do bazy i ich podsumowanie, label={lst:listing-cpp10}, language=C++]
 	private async void EndTraining(object sender, EventArgs e)
 	{
@@ -221,7 +218,7 @@ Kod \ref{lst:listing-cpp10} umożliwia zakończenie treningu oraz obsługę dany
 	}
 \end{lstlisting}
 
-Kod \ref{lst:listing-cpp11} zawiera funkcję aktualizującą informacje na ekranie:
+Listing \ref{lst:listing-cpp11} zawiera funkcję aktualizującą informacje na ekranie. Funkcja zaczyna się od narysowanie trasy na mapie. Odbywa się to przez narysowanie lini pomiędzy dwoma ostatnimi lokalizacjami użytkowanika. Od lini 18 następuje wyliczenie danych pomiarowych takich jak droga, prędkość, kalorie. Od lini 32 wypisujemy drogę w formacie odpowiednim do wartości przebytej trasy. Od lini 54 wypisujemy prędkość w formacie odpowiednim do wartości aktualnej prędkości. Od lini 59 wypisujemy kalorie w formacie odpowiednim do wartości spalonych kalorii. 
 \begin{lstlisting}[caption=Aktualizowanie informacji na ekranie, label={lst:listing-cpp11}, language=C++]
 	 private void UpdateInfo()
 	{
@@ -288,7 +285,7 @@ Kod \ref{lst:listing-cpp11} zawiera funkcję aktualizującą informacje na ekran
 	}
 \end{lstlisting}
 
-Kod \ref{lst:listing-cpp12} wykonuje zapis danych treningu do bazy danych:
+Listing \ref{lst:listing-cpp12} wykonuje zapis danych treningu do bazy danych:
 \begin{lstlisting}[caption=Zapis danych do bazy danych, label={lst:listing-cpp12}, language=C++]
 	public Task<int> SaveTrainingData(TrainingData trainingData)      
 	{
@@ -298,7 +295,7 @@ Kod \ref{lst:listing-cpp12} wykonuje zapis danych treningu do bazy danych:
 
 \subsubsection{Zakładka Kroki} %4.1.2
 
-Kod \ref{lst:listing-cpp13} implementuje modułu Step\_Counter, wykorzystujący czujnik akcelerometr:
+\hspace{0.60cm}Listing \ref{lst:listing-cpp13} implementuje modułu Step\_Counter, wykorzystujący czujnik akcelerometr. W lini 14 przypisujemy funkcję która ma być wywołana kiedy akcelerometr odczyta, że nastapiła zmiana. Na początku metody Accelerometer\_ReadingChanged zapisujemy dane z akcelerometra oraz wyliczamy wektor przesunięcia korzystając z~twierdzenia Pitagorasa. Od lini 32 następuje sprawdzenie warunków koniecznych od ustalenia czy zaszedł krok.
 \begin{lstlisting}[caption=Krakomierz i akcelerometr, label={lst:listing-cpp13}, language=C++]
 	public partial class StepCounter : ContentPage
 	{
@@ -351,7 +348,7 @@ Kod \ref{lst:listing-cpp13} implementuje modułu Step\_Counter, wykorzystujący 
 		}
 \end{lstlisting}
 
-Kod \ref{lst:listing-cpp14} zawiera funkcję dającą możliwość rozpoczęcia i zakończenia liczenia kroków:
+Listing \ref{lst:listing-cpp14} zawiera funkcję dającą możliwość rozpoczęcia i zakończenia liczenia kroków. W zależności od tego czy akcelerometr działa po naciśnięciu przycisku będzie on zatrzymany albo uruchomiony.
 \begin{lstlisting}[caption=Rozpoczęcia i zakończenie liczenia kroków, label={lst:listing-cpp14}, language=C++]
 	void Button_Cliked(object sender, EventArgs e) 
 	{

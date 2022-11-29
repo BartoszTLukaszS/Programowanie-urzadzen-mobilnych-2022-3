@@ -11,4 +11,4 @@
 \contentsline {lstlisting}{\numberline {11}{\ignorespaces Aktualizowanie informacji na ekranie}}{18}{lstlisting.11}%
 \contentsline {lstlisting}{\numberline {12}{\ignorespaces Zapis danych do bazy danych}}{20}{lstlisting.12}%
 \contentsline {lstlisting}{\numberline {13}{\ignorespaces Krakomierz i akcelerometr}}{20}{lstlisting.13}%
-\contentsline {lstlisting}{\numberline {14}{\ignorespaces Rozpoczęcia i zakończenie liczenia kroków}}{21}{lstlisting.14}%
+\contentsline {lstlisting}{\numberline {14}{\ignorespaces Rozpoczęcia i zakończenie liczenia kroków}}{22}{lstlisting.14}%
