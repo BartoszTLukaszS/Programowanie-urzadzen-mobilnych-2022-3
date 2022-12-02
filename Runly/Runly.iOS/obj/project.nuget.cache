@@ -1,20 +1,20 @@
 {
   "version": 2,
-  "dgSpecHash": "nqKk8iaqxO4abxyQltUQA6yymgL7k6H6LESTISqcl55fSD99Wr0AD0gvLzWTcMhMp6Nnz8rh/IXrmi/GHtrqiw==",
+  "dgSpecHash": "7l+LsfarEviXQjl4b3d4QpWv1pdBG6EOUOJvtFbHp3NXbyIy0WpvMx4yYVkevRxtPMHMnwj1vliowLMiS3k+8w==",
   "success": true,
-  "projectFilePath": "C:\\Users\\luksz\\source\\repos\\Programowanie-urzadzen-mobilnych-2022-3 xor2\\Runly\\Runly.iOS\\Runly.iOS.csproj",
+  "projectFilePath": "D:\\Dev\\repos\\Programowanie-urzadzen-mobilnych-2022-3\\Runly\\Runly.iOS\\Runly.iOS.csproj",
   "expectedPackageFiles": [
-    "C:\\Users\\luksz\\.nuget\\packages\\sqlite-net-pcl\\1.8.116\\sqlite-net-pcl.1.8.116.nupkg.sha512",
-    "C:\\Users\\luksz\\.nuget\\packages\\sqlitepclraw.bundle_green\\2.0.4\\sqlitepclraw.bundle_green.2.0.4.nupkg.sha512",
-    "C:\\Users\\luksz\\.nuget\\packages\\sqlitepclraw.core\\2.0.4\\sqlitepclraw.core.2.0.4.nupkg.sha512",
-    "C:\\Users\\luksz\\.nuget\\packages\\sqlitepclraw.provider.dynamic_cdecl\\2.0.4\\sqlitepclraw.provider.dynamic_cdecl.2.0.4.nupkg.sha512",
-    "C:\\Users\\luksz\\.nuget\\packages\\system.buffers\\4.4.0\\system.buffers.4.4.0.nupkg.sha512",
-    "C:\\Users\\luksz\\.nuget\\packages\\system.memory\\4.5.3\\system.memory.4.5.3.nupkg.sha512",
-    "C:\\Users\\luksz\\.nuget\\packages\\system.numerics.vectors\\4.5.0\\system.numerics.vectors.4.5.0.nupkg.sha512",
-    "C:\\Users\\luksz\\.nuget\\packages\\system.runtime.compilerservices.unsafe\\4.5.2\\system.runtime.compilerservices.unsafe.4.5.2.nupkg.sha512",
-    "C:\\Users\\luksz\\.nuget\\packages\\xamarin.essentials\\1.7.0\\xamarin.essentials.1.7.0.nupkg.sha512",
-    "C:\\Users\\luksz\\.nuget\\packages\\xamarin.forms\\5.0.0.2515\\xamarin.forms.5.0.0.2515.nupkg.sha512",
-    "C:\\Users\\luksz\\.nuget\\packages\\xamarin.forms.maps\\5.0.0.2515\\xamarin.forms.maps.5.0.0.2515.nupkg.sha512"
+    "C:\\Users\\BT\\.nuget\\packages\\sqlite-net-pcl\\1.8.116\\sqlite-net-pcl.1.8.116.nupkg.sha512",
+    "C:\\Users\\BT\\.nuget\\packages\\sqlitepclraw.bundle_green\\2.0.4\\sqlitepclraw.bundle_green.2.0.4.nupkg.sha512",
+    "C:\\Users\\BT\\.nuget\\packages\\sqlitepclraw.core\\2.0.4\\sqlitepclraw.core.2.0.4.nupkg.sha512",
+    "C:\\Users\\BT\\.nuget\\packages\\sqlitepclraw.provider.dynamic_cdecl\\2.0.4\\sqlitepclraw.provider.dynamic_cdecl.2.0.4.nupkg.sha512",
+    "C:\\Users\\BT\\.nuget\\packages\\system.buffers\\4.4.0\\system.buffers.4.4.0.nupkg.sha512",
+    "C:\\Users\\BT\\.nuget\\packages\\system.memory\\4.5.3\\system.memory.4.5.3.nupkg.sha512",
+    "C:\\Users\\BT\\.nuget\\packages\\system.numerics.vectors\\4.5.0\\system.numerics.vectors.4.5.0.nupkg.sha512",
+    "C:\\Users\\BT\\.nuget\\packages\\system.runtime.compilerservices.unsafe\\4.5.2\\system.runtime.compilerservices.unsafe.4.5.2.nupkg.sha512",
+    "C:\\Users\\BT\\.nuget\\packages\\xamarin.essentials\\1.7.0\\xamarin.essentials.1.7.0.nupkg.sha512",
+    "C:\\Users\\BT\\.nuget\\packages\\xamarin.forms\\5.0.0.2515\\xamarin.forms.5.0.0.2515.nupkg.sha512",
+    "C:\\Users\\BT\\.nuget\\packages\\xamarin.forms.maps\\5.0.0.2515\\xamarin.forms.maps.5.0.0.2515.nupkg.sha512"
   ],
   "logs": []
 }

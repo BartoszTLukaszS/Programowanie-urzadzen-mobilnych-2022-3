@@ -13,14 +13,14 @@
                        Margin="25" />
                 <Label Grid.Row="1" 
                        x:Name="amountSteps"
-                       Text="Kroki"
+                       Text="0"
                        TextColor="#192126" 
                        FontSize="30" 
                        FontAttributes="Bold"
                        HorizontalOptions="CenterAndExpand" 
                        Margin="25"   />
             </Grid>
-            <Button x:Name="btn" d:Clicked="Button_Cliked" Text="Start" HeightRequest="70" />
+            <!--<Button x:Name="btn" d:Clicked="Button_Cliked" Text="Start" HeightRequest="70" />-->
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>
