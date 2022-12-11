@@ -1,24 +1,24 @@
 {
   "format": 1,
   "restore": {
-    "D:\\Dev\\repos\\Programowanie-urzadzen-mobilnych-2022-3\\Runly\\Runly.iOS\\Runly.iOS.csproj": {}
+    "C:\\Users\\luksz\\source\\repos\\Programowanie-urzadzen-mobilnych-2022-3 z11-12\\Runly\\Runly.iOS\\Runly.iOS.csproj": {}
   },
   "projects": {
-    "D:\\Dev\\repos\\Programowanie-urzadzen-mobilnych-2022-3\\Runly\\Runly.iOS\\Runly.iOS.csproj": {
+    "C:\\Users\\luksz\\source\\repos\\Programowanie-urzadzen-mobilnych-2022-3 z11-12\\Runly\\Runly.iOS\\Runly.iOS.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\Dev\\repos\\Programowanie-urzadzen-mobilnych-2022-3\\Runly\\Runly.iOS\\Runly.iOS.csproj",
+        "projectUniqueName": "C:\\Users\\luksz\\source\\repos\\Programowanie-urzadzen-mobilnych-2022-3 z11-12\\Runly\\Runly.iOS\\Runly.iOS.csproj",
         "projectName": "Runly.iOS",
-        "projectPath": "D:\\Dev\\repos\\Programowanie-urzadzen-mobilnych-2022-3\\Runly\\Runly.iOS\\Runly.iOS.csproj",
-        "packagesPath": "C:\\Users\\BT\\.nuget\\packages\\",
-        "outputPath": "D:\\Dev\\repos\\Programowanie-urzadzen-mobilnych-2022-3\\Runly\\Runly.iOS\\obj\\",
+        "projectPath": "C:\\Users\\luksz\\source\\repos\\Programowanie-urzadzen-mobilnych-2022-3 z11-12\\Runly\\Runly.iOS\\Runly.iOS.csproj",
+        "packagesPath": "C:\\Users\\luksz\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\luksz\\source\\repos\\Programowanie-urzadzen-mobilnych-2022-3 z11-12\\Runly\\Runly.iOS\\obj\\",
         "projectStyle": "PackageReference",
         "skipContentFileWrite": true,
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
-          "C:\\Users\\BT\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\luksz\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
@@ -32,8 +32,8 @@
         "frameworks": {
           "xamarinios10": {
             "projectReferences": {
-              "D:\\Dev\\repos\\Programowanie-urzadzen-mobilnych-2022-3\\Runly\\Runly\\Runly.csproj": {
-                "projectPath": "D:\\Dev\\repos\\Programowanie-urzadzen-mobilnych-2022-3\\Runly\\Runly\\Runly.csproj"
+              "C:\\Users\\luksz\\source\\repos\\Programowanie-urzadzen-mobilnych-2022-3 z11-12\\Runly\\Runly\\Runly.csproj": {
+                "projectPath": "C:\\Users\\luksz\\source\\repos\\Programowanie-urzadzen-mobilnych-2022-3 z11-12\\Runly\\Runly\\Runly.csproj"
               }
             }
           }
@@ -65,20 +65,20 @@
         }
       }
     },
-    "D:\\Dev\\repos\\Programowanie-urzadzen-mobilnych-2022-3\\Runly\\Runly\\Runly.csproj": {
+    "C:\\Users\\luksz\\source\\repos\\Programowanie-urzadzen-mobilnych-2022-3 z11-12\\Runly\\Runly\\Runly.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\Dev\\repos\\Programowanie-urzadzen-mobilnych-2022-3\\Runly\\Runly\\Runly.csproj",
+        "projectUniqueName": "C:\\Users\\luksz\\source\\repos\\Programowanie-urzadzen-mobilnych-2022-3 z11-12\\Runly\\Runly\\Runly.csproj",
         "projectName": "Runly",
-        "projectPath": "D:\\Dev\\repos\\Programowanie-urzadzen-mobilnych-2022-3\\Runly\\Runly\\Runly.csproj",
-        "packagesPath": "C:\\Users\\BT\\.nuget\\packages\\",
-        "outputPath": "D:\\Dev\\repos\\Programowanie-urzadzen-mobilnych-2022-3\\Runly\\Runly\\obj\\",
+        "projectPath": "C:\\Users\\luksz\\source\\repos\\Programowanie-urzadzen-mobilnych-2022-3 z11-12\\Runly\\Runly\\Runly.csproj",
+        "packagesPath": "C:\\Users\\luksz\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\luksz\\Source\\Repos\\Programowanie-urzadzen-mobilnych-2022-3 z11-12\\Runly\\Runly\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
-          "C:\\Users\\BT\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\luksz\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
@@ -140,7 +140,7 @@
           ],
           "assetTargetFallback": true,
           "warn": true,
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.100\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.402\\RuntimeIdentifierGraph.json"
         }
       }
     }

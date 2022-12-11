@@ -4,10 +4,8 @@
 		<color android:color="@color/launcher_background"/>
 	</item>
 	<item>
-		<bitmap
-			android:src="@drawable/run_ic"
-			android:tileMode="disabled"
-			android:gravity="center"
-			android:layout_gravity="center" />
+		<bitmap android:src="@drawable/run_ic" 
+				android:gravity="fill"
+				android:tileMode="disabled" />
 	</item>
 </layer-list>
