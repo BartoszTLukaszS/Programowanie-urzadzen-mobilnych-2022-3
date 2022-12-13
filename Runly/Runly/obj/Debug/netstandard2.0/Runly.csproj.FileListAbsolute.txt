@@ -163,3 +163,24 @@ C:\Users\luksz\Source\Repos\Programowanie-urzadzen-mobilnych-2022-3 z11-12\Runly
 C:\Users\luksz\Source\Repos\Programowanie-urzadzen-mobilnych-2022-3 z11-12\Runly\Runly\obj\Debug\netstandard2.0\refint\Runly.dll
 C:\Users\luksz\Source\Repos\Programowanie-urzadzen-mobilnych-2022-3 z11-12\Runly\Runly\obj\Debug\netstandard2.0\Runly.pdb
 C:\Users\luksz\Source\Repos\Programowanie-urzadzen-mobilnych-2022-3 z11-12\Runly\Runly\obj\Debug\netstandard2.0\ref\Runly.dll
+D:\Dev\Programowanie-urzadzen-mobilnych-2022-3\Runly\Runly\bin\Debug\netstandard2.0\Runly.deps.json
+D:\Dev\Programowanie-urzadzen-mobilnych-2022-3\Runly\Runly\bin\Debug\netstandard2.0\Runly.dll
+D:\Dev\Programowanie-urzadzen-mobilnych-2022-3\Runly\Runly\bin\Debug\netstandard2.0\Runly.pdb
+D:\Dev\Programowanie-urzadzen-mobilnych-2022-3\Runly\Runly\obj\Debug\netstandard2.0\Runly.csproj.AssemblyReference.cache
+D:\Dev\Programowanie-urzadzen-mobilnych-2022-3\Runly\Runly\obj\Debug\netstandard2.0\Runly.GeneratedMSBuildEditorConfig.editorconfig
+D:\Dev\Programowanie-urzadzen-mobilnych-2022-3\Runly\Runly\obj\Debug\netstandard2.0\App.xaml.g.cs
+D:\Dev\Programowanie-urzadzen-mobilnych-2022-3\Runly\Runly\obj\Debug\netstandard2.0\MainPage.xaml.g.cs
+D:\Dev\Programowanie-urzadzen-mobilnych-2022-3\Runly\Runly\obj\Debug\netstandard2.0\Pages\History.xaml.g.cs
+D:\Dev\Programowanie-urzadzen-mobilnych-2022-3\Runly\Runly\obj\Debug\netstandard2.0\Pages\Settings.xaml.g.cs
+D:\Dev\Programowanie-urzadzen-mobilnych-2022-3\Runly\Runly\obj\Debug\netstandard2.0\Pages\StatisticsView.xaml.g.cs
+D:\Dev\Programowanie-urzadzen-mobilnych-2022-3\Runly\Runly\obj\Debug\netstandard2.0\Pages\StepCounter.xaml.g.cs
+D:\Dev\Programowanie-urzadzen-mobilnych-2022-3\Runly\Runly\obj\Debug\netstandard2.0\Pages\TabPage.xaml.g.cs
+D:\Dev\Programowanie-urzadzen-mobilnych-2022-3\Runly\Runly\obj\Debug\netstandard2.0\Pages\Training.xaml.g.cs
+D:\Dev\Programowanie-urzadzen-mobilnych-2022-3\Runly\Runly\obj\Debug\netstandard2.0\Runly.AssemblyInfoInputs.cache
+D:\Dev\Programowanie-urzadzen-mobilnych-2022-3\Runly\Runly\obj\Debug\netstandard2.0\Runly.AssemblyInfo.cs
+D:\Dev\Programowanie-urzadzen-mobilnych-2022-3\Runly\Runly\obj\Debug\netstandard2.0\Runly.csproj.CoreCompileInputs.cache
+D:\Dev\Programowanie-urzadzen-mobilnych-2022-3\Runly\Runly\obj\Debug\netstandard2.0\XamlC.stamp
+D:\Dev\Programowanie-urzadzen-mobilnych-2022-3\Runly\Runly\obj\Debug\netstandard2.0\Runly.dll
+D:\Dev\Programowanie-urzadzen-mobilnych-2022-3\Runly\Runly\obj\Debug\netstandard2.0\refint\Runly.dll
+D:\Dev\Programowanie-urzadzen-mobilnych-2022-3\Runly\Runly\obj\Debug\netstandard2.0\Runly.pdb
+D:\Dev\Programowanie-urzadzen-mobilnych-2022-3\Runly\Runly\obj\Debug\netstandard2.0\ref\Runly.dll
