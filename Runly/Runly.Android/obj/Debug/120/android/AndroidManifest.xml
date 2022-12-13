@@ -5,7 +5,7 @@
     Changes to this file may cause incorrect behavior and will be lost if
     the contents are regenerated.
 -->
-<manifest xmlns:android="http://schemas.android.com/apk/res/android" package="com.companyname.runly" android:versionCode="1" android:versionName="1.0">
+<manifest xmlns:android="http://schemas.android.com/apk/res/android" package="com.companyname.runly" android:installLocation="auto" android:versionCode="1" android:versionName="1.0">
   <uses-sdk android:minSdkVersion="21" android:targetSdkVersion="31" />
   <uses-permission android:name="android.permission.INTERNET" />
   <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
@@ -23,7 +23,7 @@
     </intent>
   </queries>
   <uses-feature android:glEsVersion="0x00020000" android:required="true" />
-  <application android:name="android.app.Application" android:allowBackup="true" android:appComponentFactory="androidx.core.app.CoreComponentFactory" android:debuggable="true" android:extractNativeLibs="true" android:icon="@mipmap/ic_launcher" android:label="Runly.Android" android:theme="@style/MainTheme">
+  <application android:name="android.app.Application" android:allowBackup="true" android:appComponentFactory="androidx.core.app.CoreComponentFactory" android:debuggable="true" android:extractNativeLibs="true" android:icon="@mipmap/ic_launcher" android:label="Runly.Android" android:theme="@style/MainTheme.Splash">
     <meta-data android:name="com.google.android.geo.API_KEY" android:value="AIzaSyD5tPHrQGDOxgTJPkNdRrpXkn_YdZRWBIc" />
     <meta-data android:name="com.google.android.gms.version" android:value="@integer/google_play_services_version" />
     <uses-library android:name="org.apache.http.legacy" android:required="false" />

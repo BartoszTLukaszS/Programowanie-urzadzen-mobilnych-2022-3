@@ -5897,4 +5897,3 @@ C:\Users\luksz\source\repos\Programowanie-urzadzen-mobilnych-2022-3 z11-12\Runly
 C:\Users\luksz\source\repos\Programowanie-urzadzen-mobilnych-2022-3 z11-12\Runly\Runly.Android\obj\Debug\120\android\src\mono\com\airbnb\lottie\LottieOnCompositionLoadedListenerImplementor.java
 C:\Users\luksz\source\repos\Programowanie-urzadzen-mobilnych-2022-3 z11-12\Runly\Runly.Android\obj\Debug\120\android\src\mono\com\airbnb\lottie\OnCompositionLoadedListenerImplementor.java
 C:\Users\luksz\source\repos\Programowanie-urzadzen-mobilnych-2022-3 z11-12\Runly\Runly.Android\obj\Debug\120\android\src\mono\com\airbnb\lottie\PerformanceTracker_FrameListenerImplementor.java
-C:\Users\luksz\source\repos\Programowanie-urzadzen-mobilnych-2022-3 z11-12\Runly\Runly.Android\obj\Debug\120\res\drawable\screen.png

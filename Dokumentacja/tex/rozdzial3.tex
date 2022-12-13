@@ -36,28 +36,66 @@
 
 \subsubsection{Zakładka Kroki} %3.2.1
 
-\hspace{0.60cm}W zakładce Kroki rys. \ref{rys:rysunek001a} (s. \pageref{rys:rysunek001a}) użytkownik ma możliwość rozpoczęcia liczenia wykonanych kroków.
+\hspace{0.60cm}W zakładce Kroki rys. \ref{rys:rysunek001a} (s. \pageref{rys:rysunek001a}) wyświetalana zostaje aktualna, obliczana w czasie rzeczywistym liczba odbytych kroków od czasu rozpoczęcia treningu. Początkowo liczba kroków równa się 0. Aplikacja liczy kroki od momentu nasiśnięcia przycisku \textbf{Start} w zakładce Trening (s. \pageref{rys:rysunek001b}). Liczenie kroków dokonuje się z wykorzystaniem modułu akcelerometra. Akcelerometr to wbudowany komponent do pomiaru przyspieszenia dowolnego urządzenia mobilnego. Ruchy takie jak kołysanie, przechylanie, obracanie, drżenie są wykrywane za pomocą akcelerometru. Wartość XYZ służy do obliczania i wykrywania ruchów. Współrzędne X, Y oraz Z reprezentują kierunek i położenie urządzenia wg. tych osi, w którym nastąpiło przyspieszenie. Dodatkowo przyspieszenie urządzenia obejmuje również przyspieszenie ziemskie (g = 9,81m/s2), które również należy uwzględnić w celu dokłądnego pomiaru.
+
+Obliczanie ogólnego przyspieszenia urządzenia polega na pobieraniu z sensora wartości odpowiednio X, Y oraz Z. Następnie wartości te podstawiane są do odpowiedniego wzoru $\sqrt{(X*X + Y*Y + Z*Z) - 9,81}$, który wykorzystuje też wartość przyspieszenia ziemskiego. Zliczanie kolejnych kroków, począwszy od wartości 0, wykonuje się przy pomocy instrukcji warunkowej if oraz pętli for. Dodatkowo, celu niwelacji niedokładności w pomiarach, zliczane są one dopiero po odbyciu 6 kroków. Listing \ref{lst:listing-ps1} przedstawia za pomocą pseudokodu ogólną zasadę obliczania przyspieszenia:
+
+\begin{lstlisting}[caption=Pseudokod działania krokomierza, label={lst:listing-ps1}, language=C++]
+	Lista Zawierajaca_Wartosci_Przyspieszen;
+	zmienna X = Odczyt.Sensora.X;
+	zmienna Y = Odczyt.Sensora.Y;
+	zmienna Z = Odczyt.Sensora.Z;
+	
+	zmienna Przyspieszenie = \sqrt{(X*X + Y*Y + Z*Z) - 9,81};
+	
+	JESLI (liczba_Wartosci_Przyspieszen > 1)
+	{
+		pomiar_krokow = 0;
+		DLA (i = 1; i < liczba_Wartosci_Przyspieszen - 1; i++)
+		{
+			pomiar_krokow++;
+			JESLI (liczba_krokow > 5)
+			{
+				liczba_krokow += 6;
+			}
+		}
+	}
+\end{lstlisting}
 
 \begin{figure}[!htb]
 	\centering
-	\includegraphics[width=.2\linewidth]{rys/kroki.png}
+	\includegraphics[width=.2\linewidth]{rys/kroki2.jpg}
 	\caption{Layout krokomierza}
 	\label{rys:rysunek001a}
 \end{figure}
 
-Liczenie kroków wykonuje się przy wykorzystaniu modułu akcelerometra..
-
 \subsubsection{Zakładka Trening} %3.2.2
 
-\hspace{0.60cm}W zakładce Trening rys. \ref{rys:rysunek001b} (s. \pageref{rys:rysunek001b}) użytkownik ma możliwość rozpoczęcia treningu. Zaczyna się odliczanie i wyświetlanie na ekranie bieżącego czasu odbywanego treningu, pokonany dystans w metrach, bieżąca prędkość oraz teoretyczna ilość spalonych kalorii. Na środkowej części ekranu wyświetlana zostaje, przy wykorzystaniu modułów GPS oraz  Map Google bieżąca lokalizacja użytkownika. Za pomocą polilinii rysowana jest trasa, którą udaje się użytkownik. 
+\hspace{0.60cm}W zakładce Trening rys. \ref{rys:rysunek001b} (s. \pageref{rys:rysunek001b}) użytkownik ma możliwość rozpoczęcia treningu. Naciśnięcie przycisku \textbf{Start} Zaczyna się odliczanie i wyświetlanie na ekranie bieżącego czasu odbywanego treningu, pokonany dystans w metrach, bieżąca prędkość oraz teoretyczna ilość spalonych kalorii. Na środkowej części ekranu wyświetlana zostaje, przy wykorzystaniu modułów GPS oraz  Map Google bieżąca lokalizacja użytkownika. Za pomocą polilinii rysowana jest trasa, którą udaje się użytkownik. 
 
 \begin{figure}[!htb]
 	\centering
 	\begin{minipage}{.5\textwidth}
 		\centering
-		\includegraphics[width=.4\linewidth]{rys/trening.png}
-		\caption{Layout treningu}
+		\includegraphics[width=.4\linewidth]{rys/trening1.jpg}
+		\caption{Layout treningu - rozpoczęcie treningu}
 		\label{rys:rysunek001b}
+	\end{minipage}%
+	\begin{minipage}{.5\textwidth}
+		\centering
+		\includegraphics[width=.4\linewidth]{rys/trening1a.jpg}
+		\caption{Zatrzymanie treningu}
+		\label{rys:rysunek001ba}
+	\end{minipage}
+\end{figure}
+
+\begin{figure}[!htb]
+	\centering
+	\begin{minipage}{.5\textwidth}
+		\centering
+		\includegraphics[width=.4\linewidth]{rys/trening1b.jpg}
+		\caption{Wznowienie lub zakończenie treningu}
+		\label{rys:rysunek001bb}
 	\end{minipage}%
 	\begin{minipage}{.5\textwidth}
 		\centering
@@ -75,7 +113,7 @@ Po zakończeniu treningu, w tej samej zakładce, wyświetlony zostaje ekran zawi
 
 \begin{figure}[!htb]
 	\centering
-	\includegraphics[width=.2\linewidth]{rys/historia.png}
+	\includegraphics[width=.2\linewidth]{rys/historia2.jpg}
 	\caption{Layout historii treningów}
 	\label{rys:rysunek001d}
 \end{figure}
@@ -88,7 +126,7 @@ Wykorzystana w nim zostaje odpowiednia funkcja otwierająca widok statystyk i po
 
 \begin{figure}[!htb]
 	\centering
-	\includegraphics[width=.2\linewidth]{rys/ustawienia.png}
+	\includegraphics[width=.2\linewidth]{rys/ustawienia2.jpg}
 	\caption{Layout ustawień i opcji}
 	\label{rys:rysunek001e}
 \end{figure}
