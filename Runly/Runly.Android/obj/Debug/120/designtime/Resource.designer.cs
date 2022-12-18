@@ -14,7 +14,7 @@ namespace Runly.Droid
 {
 	
 	
-	[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Xamarin.Android.Build.Tasks", "13.1.0.5")]
+	[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Xamarin.Android.Build.Tasks", "13.0.0.73")]
 	public partial class Resource
 	{
 		
@@ -26008,19 +26008,16 @@ namespace Runly.Droid
 			public const int run_ic = 2131165352;
 			
 			// aapt resource value: 0x7F0700A9
-			public const int screen = 2131165353;
+			public const int test_custom_background = 2131165353;
 			
 			// aapt resource value: 0x7F0700AA
-			public const int test_custom_background = 2131165354;
+			public const int tooltip_frame_dark = 2131165354;
 			
 			// aapt resource value: 0x7F0700AB
-			public const int tooltip_frame_dark = 2131165355;
+			public const int tooltip_frame_light = 2131165355;
 			
 			// aapt resource value: 0x7F0700AC
-			public const int tooltip_frame_light = 2131165356;
-			
-			// aapt resource value: 0x7F0700AD
-			public const int user = 2131165357;
+			public const int user = 2131165356;
 			
 			static Drawable()
 			{

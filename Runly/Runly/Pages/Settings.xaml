@@ -36,17 +36,13 @@
                 
                 <Frame Grid.Row="0" BackgroundColor="#bbf247" CornerRadius="10" HasShadow="True" ></Frame>
                 <Label Grid.Row="0" Text="Login" FontSize="25" TextColor="#192126" BackgroundColor="Transparent" Padding="15"/>
-                <StackLayout>
-                    <Entry Grid.Row="0" Text="wpisz swój login" FontSize="20" TextColor="#384147" BackgroundColor="Transparent" HorizontalTextAlignment="End" Opacity="0.8" />
-                </StackLayout>
                 <Button Grid.Row="0" Margin="0" BorderWidth="0" Opacity="0.2" BackgroundColor="#bbf247"/>
+                <Entry Grid.Row="0" Text="wpisz login" FontSize="20" TextColor="#384147" BackgroundColor="Transparent" HorizontalTextAlignment="End" Opacity="0.8" />
 
                 <Frame Grid.Row="1" BackgroundColor="#bbf247" CornerRadius="10" HasShadow="True" ></Frame>
                 <Label Grid.Row="1" Text="Hasło" x:Name="label" FontSize="25" TextColor="#192126" BackgroundColor="Transparent" Padding="15"/>
-                <StackLayout>
-                    <Entry Grid.Row="1" IsPassword="true" Placeholder="wpisz hasło" FontSize="25" TextColor="#384147" BackgroundColor="Transparent" HorizontalTextAlignment="End" Opacity="0.8" />
-                </StackLayout>
                 <Button Grid.Row="1" Margin="0" BorderWidth="0" Opacity="0.2" BackgroundColor="#bbf247"/>
+                <Entry Grid.Row="1" IsPassword="true" Placeholder="wpisz hasło" FontSize="25" TextColor="#384147" BackgroundColor="Transparent" HorizontalTextAlignment="End" Opacity="0.8" />
 
                 <Frame Grid.Row="2" BackgroundColor="#bbf247" CornerRadius="10" HasShadow="True" ></Frame>
                 <Label Grid.Row="2" Text="Waga" FontSize="25" TextColor="#192126" BackgroundColor="Transparent" Padding="15"/>
@@ -55,8 +51,8 @@
 
                 <Frame Grid.Row="3" BackgroundColor="#bbf247" CornerRadius="10" HasShadow="True" ></Frame>
                 <Label Grid.Row="3" Text="Wiek" FontSize="25" TextColor="#192126" BackgroundColor="Transparent" Padding="15"/>
-                <Label Grid.Row="3" Text="20" FontSize="20" TextColor="#384147" BackgroundColor="Transparent" Padding="15" HorizontalTextAlignment="End" Opacity="0.8" />
                 <Button Grid.Row="3" Margin="0" BorderWidth="0" Opacity="0.2" BackgroundColor="#bbf247"/>
+                <Entry Grid.Row="3" Text="wpisz swój wiek" FontSize="20" TextColor="#384147" BackgroundColor="Transparent" HorizontalTextAlignment="End" Opacity="0.8" />
 
                 <Frame Grid.Row="4" BackgroundColor="#bbf247" CornerRadius="10" HasShadow="True" ></Frame>
                 <Label Grid.Row="4" Text="Opcja" FontSize="25" TextColor="#192126" BackgroundColor="Transparent" Padding="15"/>
