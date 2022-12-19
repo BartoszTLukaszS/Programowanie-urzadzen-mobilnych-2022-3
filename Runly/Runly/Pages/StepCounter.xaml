@@ -4,7 +4,7 @@
              x:Class="Runly.Pages.StepCounter" 
              BackgroundColor="#f8feec" >
     <ContentPage.Content>
-        <StackLayout>
+        <StackLayout Margin="50">
             <Grid VerticalOptions="CenterAndExpand">
                 <Image Grid.Row="0" Source="icon_steps.png" 
                        VerticalOptions="CenterAndExpand" 
@@ -19,7 +19,26 @@
                        FontAttributes="Bold"
                        HorizontalOptions="CenterAndExpand" 
                        Margin="25"   />
+
             </Grid>
+            <Grid x:Name="trainingGrid" IsVisible="False">
+                <Label Grid.Row="0" 
+                       Text="Kroki podczas treningu"
+                       TextColor="#192126" 
+                       FontSize="25" 
+                       FontAttributes="Bold"
+                       HorizontalOptions="CenterAndExpand" 
+                       Margin="5"   />
+                <Label Grid.Row="1" 
+                       x:Name="amountTrainingSteps"
+                       Text="0"
+                       TextColor="#192126" 
+                       FontSize="25" 
+                       FontAttributes="Bold"
+                       HorizontalOptions="CenterAndExpand" 
+                       Margin="5"   />
+            </Grid>
+            
             <!--<Button x:Name="btn" d:Clicked="Button_Cliked" Text="Start" HeightRequest="70" />-->
         </StackLayout>
     </ContentPage.Content>

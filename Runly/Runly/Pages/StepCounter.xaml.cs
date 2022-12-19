@@ -1,4 +1,5 @@
-﻿using Xamarin.Essentials;
+﻿using System;
+using Xamarin.Essentials;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
@@ -12,6 +13,7 @@ namespace Runly.Pages
         public StepCounter()
         {
             InitializeComponent();
+            
 
             GetStepCounter steps = new GetStepCounter();
 
@@ -22,6 +24,25 @@ namespace Runly.Pages
                     amountSteps.Text = message;
                 });
             });
+
+            MessagingCenter.Subscribe<string>(this, "trainingSteps", message =>
+            {
+                Device.BeginInvokeOnMainThread(() =>
+                {
+                    if (Int16.Parse(message) > 0)
+                    {
+                        trainingGrid.IsVisible= true;
+                        amountTrainingSteps.Text = message;
+                    } else
+                    {
+                        trainingGrid.IsVisible = false;
+                    }
+                        
+                        
+                });
+            });
+
+            
 
             if (Preferences.Get("LocationServiceRunning", false) == true)
             {
