@@ -27,12 +27,14 @@ namespace Runly.Pages
 
         List<PositionList> positionsList = new List<PositionList>();
 
-        double weight = 70;
+        double weight = Int16.Parse(Preferences.Get("Waga", "70"));
         double way = 0;
         double tempo = 0;
         double caloriesBurned = 0;
         double avrSpeed = 0;
         double speedSum = 0;
+        int steps = 0;
+        int startSteps = 0;
 
         private readonly SQLiteAsyncConnection _database;
         private SQLiteAsyncConnection _databaseTraining;
@@ -46,6 +48,15 @@ namespace Runly.Pages
             //Połączenie z bazą danych
             _database = new SQLiteAsyncConnection(Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData), "trainingHistory.db3"));
             _database.CreateTableAsync<TrainingData>();
+
+            MessagingCenter.Subscribe<string>(this, "steps", message =>
+            {
+                Device.BeginInvokeOnMainThread(() =>
+                {
+                    steps = Int16.Parse(message);
+                });
+            });
+
             GetLocation();
         }
 
@@ -92,6 +103,7 @@ namespace Runly.Pages
             btnStopF.IsVisible = true;
             isTraining = true;
             startDate = DateTime.Now;
+            startSteps = steps;
 
             //Baza danych lokalizacji w treningu
             _databaseTraining = new SQLiteAsyncConnection(Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData), "training" + startDate.ToString("dd_MM_yyyy_HH_mm_ss") + ".db3"));
@@ -102,6 +114,7 @@ namespace Runly.Pages
             timer.Interval = 1000;
             timer.Elapsed += Timer_Elapsed;
             timer.Start();
+            
         }
 
         private void ResumeTraining(object sender, EventArgs e)
@@ -163,6 +176,7 @@ namespace Runly.Pages
                 Distance = way.ToString() + " km",
                 Calories = caloriesBurned,
                 AvrSpeed = avrSpeed, 
+                Steps = steps - startSteps,
                 TrainingDatabase = "training" + startDate.ToString("dd_MM_yyyy_HH_mm_ss") + ".db3"
             });
 
@@ -179,10 +193,12 @@ namespace Runly.Pages
             amountDistance.Text = "0";
             amountCalories.Text = "0";
             amountSpeed.Text = "0.0";
+            startSteps = 0;
             hours = 0;
             mins = 0;
             secs = 0;
             map.MapElements.Clear();
+            MessagingCenter.Send("0", "trainingSteps");
         }
 
         //Funkcja aktualizująca informacje na ekranie
@@ -248,6 +264,8 @@ namespace Runly.Pages
                 amountCalories.Text = caloriesBurned.ToString();
             else
                 amountCalories.Text = string.Format("{0:00}", caloriesBurned);
+
+            MessagingCenter.Send((steps - startSteps).ToString(), "trainingSteps");
         }
 
         //Zapisanie danych do bazy danych

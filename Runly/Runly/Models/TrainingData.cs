@@ -14,6 +14,7 @@ namespace Runly.Models
         public string Distance { get; set; }
         public double Calories { get; set; }
         public double AvrSpeed { get; set; }
+        public int Steps { get; set; }
         public string TrainingDatabase { get; set; }
     }
 }
