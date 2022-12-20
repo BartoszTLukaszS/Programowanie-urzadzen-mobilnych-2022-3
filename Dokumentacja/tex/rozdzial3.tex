@@ -5,7 +5,7 @@
 \subsection{Przygotowanie narzędzi (Git, Visual Studio)}		%3.1
 
 \subsubsection{Visual Studio} %3.1.1
-\hspace{0.60cm}Pierwszym i oczywistym krokiem, który musimy wykonać jest przygotowanie właściwych technologii i środowisk, które posłużą do tworzenia naszego projektu. Jako środowisko programistyczne wybrano Visual Studio 2022 i dostępną na nim wspomnianą wcześniej platformę Xamarin.Forms. W celu instalacji tego narzędzia, pobieramy plik instalacyjny odpowiedni dla naszego systemu ze strony Microsoftu\footnote{Plik instalacyjny na stronie  https://visualstudio.microsoft.com/pl/vs\cite{www1}.}, co pokazano na rysunku \ref{rys:rysunek002a}. Podczas instalacji, w menedżerze pakietów, wybieramy pakiety \textit{Mobile i desktop developement with ASP.NET}, (rys. \ref{rys:rysunek002b}), zaznaczając też opcjonalne dodatki w zależności od wymagań (rys. \ref{rys:rysunek002c})(np. Xamarin, emulator Androida itd.). Środowisko Visual Studio posiada zintegrowany system kontroli wersji oprogramowania Git, który będzie wspomagał naszą pracę.
+\hspace{0.60cm}Pierwszym i oczywistym krokiem, który musimy wykonać jest przygotowanie właściwych technologii i środowisk, które posłużą do tworzenia naszego projektu. Jako środowisko programistyczne wybrano Visual Studio 2022 i dostępną na nim wspomnianą wcześniej platformę Xamarin.Forms. W celu instalacji tego narzędzia, pobieramy plik instalacyjny odpowiedni dla naszego systemu ze strony Microsoftu\footnote{Plik instalacyjny na stronie  https://visualstudio.microsoft.com/pl/vs\cite{www3}.}, co pokazano na rysunku \ref{rys:rysunek002a}. Podczas instalacji, w menedżerze pakietów, wybieramy pakiety \textit{Mobile i desktop developement with ASP.NET}, (rys. \ref{rys:rysunek002b}), zaznaczając też opcjonalne dodatki w zależności od wymagań (rys. \ref{rys:rysunek002c})(np. Xamarin, emulator Androida itd.). Środowisko Visual Studio posiada zintegrowany system kontroli wersji oprogramowania Git, który będzie wspomagał naszą pracę.
 
 \begin{figure}[!htb]
 	\centering
@@ -30,9 +30,9 @@
 
 \subsubsection{Git} %3.1.2
 
-\hspace{0.60cm}Na stronie Github stworzone zostało zdalne repozytorium, do którego wysyłane będą kolejne wersje naszego projektu, z możliwością kontrybucji ze strony członków zespołu programistów. Lokalnie, na maszynach programistów zainstalowano dodatkowe narzędzie jakim jest desktopowa aplikacja Git for Windows, która dostarcza emulację BASH wykorzystywaną do uruchamiania Git'a z wiersza poleceń. Jest to duże udogodnienie dla osób, które czują się pewniej pracując z terminalem systemu Linux. Plik instalacyjny można pobrać ze strony\footnote{Plik instalacyjny na stronie https://git-scm.com/download/win\cite{www2}.}.
+\hspace{0.60cm}Na stronie Github stworzone zostało zdalne repozytorium, do którego wysyłane będą kolejne wersje naszego projektu, z możliwością kontrybucji ze strony członków zespołu programistów. Lokalnie, na maszynach programistów zainstalowano dodatkowe narzędzie jakim jest desktopowa aplikacja Git for Windows, która dostarcza emulację BASH wykorzystywaną do uruchamiania Git'a z wiersza poleceń. Jest to duże udogodnienie dla osób, które czują się pewniej pracując z terminalem systemu Linux. Plik instalacyjny można pobrać ze strony\footnote{Plik instalacyjny na stronie https://git-scm.com/download/win\cite{www4}.}.
 
-\subsection{Szkice layoutów}		%3.2
+\subsection{Szkice layoutów i pseudokody}		%3.2
 
 \subsubsection{Zakładka Kroki} %3.2.1
 
@@ -46,7 +46,7 @@ Obliczanie ogólnego przyspieszenia urządzenia polega na pobieraniu z sensora w
 	zmienna Y = Odczyt.Sensora.Y;
 	zmienna Z = Odczyt.Sensora.Z;
 	
-	zmienna Przyspieszenie = \sqrt{(X*X + Y*Y + Z*Z) - 9,81};
+	zmienna Przyspieszenie = sqrt{(X*X + Y*Y + Z*Z) - 9,81};
 	
 	JESLI (liczba_Wartosci_Przyspieszen > 1)
 	{
@@ -71,7 +71,49 @@ Obliczanie ogólnego przyspieszenia urządzenia polega na pobieraniu z sensora w
 
 \subsubsection{Zakładka Trening} %3.2.2
 
-\hspace{0.60cm}W zakładce Trening rys. \ref{rys:rysunek001b} (s. \pageref{rys:rysunek001b}) użytkownik ma możliwość rozpoczęcia treningu. Naciśnięcie przycisku \textbf{Start} Zaczyna się odliczanie i wyświetlanie na ekranie bieżącego czasu odbywanego treningu, pokonany dystans w metrach, bieżąca prędkość oraz teoretyczna ilość spalonych kalorii. Na środkowej części ekranu wyświetlana zostaje, przy wykorzystaniu modułów GPS oraz  Map Google bieżąca lokalizacja użytkownika. Za pomocą polilinii rysowana jest trasa, którą udaje się użytkownik. 
+\hspace{0.60cm}W zakładce Trening rys. \ref{rys:rysunek001b} (s. \pageref{rys:rysunek001b}) użytkownik ma możliwość rozpoczęcia treningu. Naciśnięcie przycisku \textbf{Start} zaczyna odliczanie i wyświetlanie na ekranie bieżącego czasu odbywanego treningu, pokonany dystans w metrach, bieżącą prędkość oraz teoretyczną ilość spalonych kalorii w zależności od wagi użytkownika. Listing \ref{lst:listing-ps2} przedstawia pseudokod algorytmu wg którego zostaje odliczany czas:
+
+\begin{lstlisting}[caption=Odliczanie czasu, label={lst:listing-ps2}, language=C++]
+	klasa Timer;
+	int godziny, minuty, sekundy;
+	JESLI(trening)
+		czas treningu = godziny * 3600 + minuty * 60 + sekundy; 
+	Rozpoczecie_Treningu() {
+		nowy Timer;
+		Inicjalizacja_Timera;
+		start Timera;
+	}
+	Liczenie_czasu_co_sekunde() {
+		sekundy++;
+		JESLI(sekundy = 59)
+			minuty++, sekundy = 0;
+		JESLI(minuty = 59)
+			godziny++, minuty = 0;
+	}
+\end{lstlisting}
+Dodatkowo wymagane jest załączenie biblioteki System.Timers.
+
+Listing \ref{lst:listing-ps3} przedstawia pseudokod liczenia, w odpowiednim formacie, pokonanego dystansu, prędkości oraz spalonych kalorii. Zmienna \textit{tmpWay} przechowuje dystans w kilometrach pomiędzy dwiema lokalizacjami - lokalizacją obecną i poprzednią. Ten dystans jest obliczany przy użyciu metody \textit{CalculateDistance} w klasie \textit{Location}, która bierze trzy argumenty: obecną lokalizację, poprzednią lokalizację oraz jednostki dystansu. Zmienna \textit{way} przechowuje całkowity dystans. Wartość zmiennej \textit{tmpWay} jest dodawana do \textit{way} i wynik jest zaokrąglany do trzech miejsc po przecinku, używając metody \textit{Math.Round}. Zmienna \textit{tempo} przechowuje wartość prędkości z jaką pokonano drogę z jednej lokalizacji do drugiej. Prędkość jest obliczana poprzez dzielenie dystansu (\textit{tmpWay}) i czasu jaki zajęło jego pokonanie, a następnie wynik mnożony jest przez 3600 w celu uzyskania prędkości w jednostkach na godzinę.
+
+\begin{lstlisting}[caption=Obliczanie parametrów treningu, label={lst:listing-ps3}, language=C++]
+	double way = 0;
+	double tmpWay;
+	double tempo = 0;
+	suma_predkosci = 0;
+	srednia_predkosc = 0;
+	spalone_kalorie = 0;
+	double srednia_predkosc = 0;
+	double tmpWay = Location.CalculateDistance(lokalizacja_obecna, lokalizacja_poprzednia, dystans);
+	way = Math.Round(way + tmpWay, 3);
+	tempo = (tmpWay / czas * 3600);
+	suma_predkosci += tempo * czas;
+	srednia_predkosc = suma_predkosci / czas_calkowity;
+	spalone_kalorie = (srednia_predkosc * 3,5 * waga / 200) / (czas_calkowity / 60)
+\end{lstlisting}
+
+W celu obliczania sum prędkości, zmienna \textit{tempo} mnożona jest przez czas jaki upłynął między dwiema pozycjami i dodawany do całkowitej sumy prędkości. W~końcu prędkość średnia obliczana jest jako iloraz sum prędkości i całkowitego czasu jaki upłynął. Spalone kalorie obliczane są używając średniej prędkości, wagi użytkownika i całkowitego czasu jaki upłynął.\\ Wzór jaki wykorzystano to: $\dfrac{srednia\_predkosc*3,5*waga}{200} * \dfrac{czas\_calkowity}{60}$.
+
+Na środkowej części ekranu wyświetlana zostaje, przy wykorzystaniu modułów GPS oraz Map Google bieżąca lokalizacja użytkownika. Za pomocą polilinii rysowana jest na mapie trasa, którą udaje się użytkownik. W każdej chwili od rozpoczęcia treningu użytkownik ma możliwość wstrzymania treningu za pomocą przycisku \textbf{Stop}, jak pokazano na rys. \ref{rys:rysunek001ba} (s. \pageref{rys:rysunek001ba}). Po jego kliknięciu, wstrzymane zostaje odliczanie wspomnianych wyżej parametrów.
 
 \begin{figure}[!htb]
 	\centering
@@ -84,7 +126,7 @@ Obliczanie ogólnego przyspieszenia urządzenia polega na pobieraniu z sensora w
 	\begin{minipage}{.5\textwidth}
 		\centering
 		\includegraphics[width=.4\linewidth]{rys/trening1a.jpg}
-		\caption{Zatrzymanie treningu}
+		\caption{Wstrzymanie treningu}
 		\label{rys:rysunek001ba}
 	\end{minipage}
 \end{figure}
@@ -105,7 +147,7 @@ Obliczanie ogólnego przyspieszenia urządzenia polega na pobieraniu z sensora w
 	\end{minipage}
 \end{figure}
 
-Po zakończeniu treningu, w tej samej zakładce, wyświetlony zostaje ekran zawierający podsumowanie odbytego treningu. Jak pokazano na rys. \ref{rys:rysunek001c} (s. \pageref{rys:rysunek001c}), podsumowanie zawiera datę i czas rozpoczęcia treningu, przebyty dystans, czas treningu, spalone kalorie oraz średnią prędkość z jaką poruszał się użytkownik. 
+Następnie, jak pokazano na kolejnym rys. \ref{rys:rysunek001bb} (s. \pageref{rys:rysunek001bb}), pojawiają się przyciski \textbf{Wznów} i \textbf{Koniec}. Po kliknięciu tego pierwszego następuje wznowienie odliczania parametrów treningu. Kliknięcie przycisku \textbf{Koniec} kończy cały trening, a tej samej zakładce wyświetlony zostaje ekran zawierający podsumowanie odbytego treningu. Rys. \ref{rys:rysunek001c} (s. \pageref{rys:rysunek001c}) zawiera podsumowanie: datę i czas rozpoczęcia treningu, przebyty dystans, czas treningu, spalone kalorie oraz średnią prędkość z jaką poruszał się użytkownik. 
 
 \subsubsection{Zakładka Historia} %3.2.3
 
@@ -122,7 +164,7 @@ Wykorzystana w nim zostaje odpowiednia funkcja otwierająca widok statystyk i po
 
 \subsubsection{Zakładka Ustawienia} %3.2.4
 
-\hspace{0.60cm}W zakładce Ustawienia rys. \ref{rys:rysunek001e} (s. \pageref{rys:rysunek001e}) użytkownik ma możliwość konfiguracji własnego konta użytkownika, swoich danych fizycznych oraz wieku, na podstawie których obliczane zostają statystyki traningu jak np. spalone kalorie. 
+\hspace{0.60cm}W zakładce Ustawienia rys. \ref{rys:rysunek001e} (s. \pageref{rys:rysunek001e}) użytkownik ma możliwość konfiguracji własnego konta użytkownika, swoich danych fizycznych oraz wieku, na podstawie których obliczane zostają statystyki traningu jak np. spalone kalorie.
 
 \begin{figure}[!htb]
 	\centering
