@@ -6,6 +6,7 @@ using Android;
 using Xamarin.Forms.Platform.Android;
 using Android.Content;
 using Xamarin.Forms;
+using Plugin.LocalNotification;
 
 namespace Runly.Droid
 {
@@ -46,6 +47,8 @@ namespace Runly.Droid
             base.OnCreate(savedInstanceState);
 
             this.SetStatusBarColor(Xamarin.Forms.Color.FromHex("#192126").ToAndroid());
+
+            LocalNotificationCenter.CreateNotificationChannel();
 
             Xamarin.Essentials.Platform.Init(this, savedInstanceState);
             global::Xamarin.Forms.Forms.Init(this, savedInstanceState);
