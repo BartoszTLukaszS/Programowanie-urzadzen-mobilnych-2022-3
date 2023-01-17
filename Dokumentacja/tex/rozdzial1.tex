@@ -23,7 +23,7 @@ Poza pomiarami w trakcie treningu, aplikacja ma także liczyć kroki, kiedy dzia
 \subsection{Opis wyglądu}  %1.2
 
 
-\hspace{0.60cm}Na głównej stronie treningu, którą widzi użytkownik po otwarciu aplikacji, powinny znajdować się takie informacje jak:
+\hspace{0.60cm}Na stronie treningu użytkownik w trakcie odbywania treningu, powinien móc odczytać najważniejsze i najbardziej przydatne informacje, takie jak:
 \begin{itemize}
 	\item Czas trwania aktywności,
 	\item Prędkość w danym momencie,
@@ -32,7 +32,7 @@ Poza pomiarami w trakcie treningu, aplikacja ma także liczyć kroki, kiedy dzia
 	\item Spalone kalorie
 \end{itemize}
 
-Oprócz tego na stronie treningu Rys. \ref{rys:rysunek001} (s. \pageref{rys:rysunek001}) powinna znajdować się mapa, na której będzie pokazana aktualna pozycja uzytkownika oraz przebyta trasa.
+Oprócz tego na stronie treningu Rys. \ref{rys:rysunek001} (s. \pageref{rys:rysunek001}) powinna znajdować się mapa, na~której będzie pokazana aktualna pozycja uzytkownika oraz na której ma być rysowana linią przebyta trasa.
 
 Po zakończonym treningu aplikacja ma pokazać całą przebytą trasę na mapie oraz dać dostęp do szczegółowych statystyk treningu Rys. \ref{rys:rysunek002} (s. \pageref{rys:rysunek002}). Użytkownik ma mieć podgląd na wszystkie możliwe dane.
 
@@ -52,7 +52,7 @@ Po zakończonym treningu aplikacja ma pokazać całą przebytą trasę na mapie 
 	\end{minipage}
 \end{figure}
 
-Ekran krokomierza Rys. \ref{rys:rysunek003} (s. \pageref{rys:rysunek003}) ma zawierać tylko liczbę zrobionych w~biezacym dniu kroków.
+Ekran krokomierza Rys. \ref{rys:rysunek003} (s. \pageref{rys:rysunek003}) ma zawierać liczbę zrobionych w~bieżącym dniu kroków. Ekran krokomierza powinien być ekranem głównym, który użytkownik widzi po otwarciu aplikacji, ponieważ zawiera on, które prawdopodobnie są najbardziej interesujące w dany momencie. Oprócz tego w momencie rozpoczęcia treningu na tym ekranie ma~pojawić się dodatkowy licznik pokazujący tylko liczbę kroków zrobionych w trakcie treningu.
 
 \begin{figure}[!htb]
 	\centering
@@ -61,7 +61,24 @@ Ekran krokomierza Rys. \ref{rys:rysunek003} (s. \pageref{rys:rysunek003}) ma zaw
 	\label{rys:rysunek003}
 \end{figure}
 
-Na dole aplikacji ma się znajdować menu za pomocą którego użytkownik może się przełączać pomiędzy ekranem krokomierza, treningu, odbytymi treningami i ustawieniami.
+Ekran zawierający historię odbytych treningów Rys. \ref{rys:rysunek005} (s. \pageref{rys:rysunek005}) powinien przedstawiać je w~postaci listy. Każdy wpis listy powinien zawierać datę treningu, a~po~naciśnięciu na dany wpis to ma się otworzyć ekran taki sam jak ekran podsumowania po zakończonym treningu, ale tym razem powiniem pokazywać zapisane dane z wybranego treningu. Ekran ustawień Rys. \ref{rys:rysunek006} (s. \pageref{rys:rysunek006}) też powinny być przedstawione w postaci listy. Kliknięcie w wybraną opcję ma otworzyć okienko wpisu zmiany wartości danej opcji.
 
-Ekran zawierający historię odbytych treningów powinien przedstawiać je w~postaci list. Ustawienia też powinny być przedstawione w postaci listy. 
- 
+\begin{figure}[!htb]
+	\centering
+	\begin{minipage}{.5\textwidth}
+		\centering
+		\includegraphics[width=.4\linewidth]{rys/ekran_historii.png}
+		\caption{Ekran historii}
+		\label{rys:rysunek005}
+	\end{minipage}%
+	\begin{minipage}{.5\textwidth}
+		\centering
+		\includegraphics[width=.4\linewidth]{rys/ekran_ustawien.png}
+		\caption{Ekran ustawień}
+		\label{rys:rysunek006}
+	\end{minipage}
+\end{figure} 
+
+Aby ułatwić użytkownikom nawigację po aplikacji, na dole ekranu powinno znajdować się intuicyjne menu, które pozwoli na szybkie przejście między poszczególnymi funkcjami. W menu tym powinny znaleźć się przyciski, które po kliknięciu przeniosą użytkownika do ekranu krokomierza, treningu, historii odbytych treningów oraz ekranu ustawień. Dzięki takiemu rozwiązaniu użytkownicy będą mogli łatwo i szybko dostępować do interesujących ich funkcji, co zwiększy komfort i efektywność korzystania z aplikacji.
+
+Kolorystyka aplikacji powinna być starannie dobrana, aby zapewnić przyjemne i komfortowe doświadczenie użytkownikom. Optymalnym rozwiązaniem będzie zastosowanie odcieni zieleni, które są łagodne dla oczu i nie powodują dyskomfortu podczas dłuższej pracy z aplikacją. Dodatkowo, modernistyczny i nowoczesny wygląd aplikacji pozwoli użytkownikom poczuć, że korzystają z produktu wysokiej jakości, co zwiększy ich zadowolenie i satysfakcję z jej użytkowania. Dlatego ważne jest, aby projekt graficzny był przemyślany i dopracowany, aby spełniał wszystkie wymagania funkcjonalne i estetyczne.

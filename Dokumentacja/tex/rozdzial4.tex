@@ -376,3 +376,62 @@ Listing \ref{lst:listing-cpp14} zawiera funkcję dającą możliwość rozpoczę
 		}
 	}
 \end{lstlisting}
+
+\subsubsection{Zakładka Ustawienia} %4.1.3
+
+\hspace{0.60cm}Listing \ref{lst:listing-cpp15} jest to funkcja wywołana po kliknięciu w wybraną opcję. Otwiera ona popup w którym użytkownik może wprowadzić własne prarametry dla danej opcji. Po zatwierdzeniu opcji zostają one przypisane dla określonego prarametru ustawień aplikacji i są zapamiętane.
+\begin{lstlisting}[caption=Otwarcie popup do wprowadzenia danych, label={lst:listing-cpp15}, language=C++]
+	public async void Open_Popup(object sender, EventArgs e)
+	{
+		var option = (Xamarin.Forms.Button)sender;
+		int id = Int16.Parse(option.ClassId);
+		string result = await DisplayPromptAsync(options[id], "");
+		Preferences.Set(options[id], result);
+		Display_Options();
+	}
+\end{lstlisting}
+
+Listing \ref{lst:listing-cpp16} jest to funkcja służąca do ustawienia powiadomienia o treningu. Wywołana jest ona po kliknięciu w odpowiednią opcję. Otwiera ona popup w którym użytkownik wprowadza godzinę o której chciałby otrzymać powiadomienie. Następnie od 14 linii następuje ustawienie zmiennej liczącej czas do treningu. Od linii 18 ustawiane są dane powiadomiena. W linii 30 wywołujemy funkcję tworzącą powiadomienie ustawione wcześniej. 
+\begin{lstlisting}[caption=Ustawienie powiadomienia o treningu, label={lst:listing-cpp16}, language=C++]
+	public async void Set_Notification(object sender, EventArgs e)
+	{
+		int hour;
+		bool valid = false;
+		do {
+			string result = await DisplayPromptAsync("Podaj godzine. 0-23", "");
+			if (result == null)
+			result = "18";
+			hour = Int16.Parse(result);
+			if(hour <= 23 && hour >= 0)
+			valid = true;
+		} while (!valid);
+			
+		DateTime setTime = new DateTime(DateTime.Now.Year, DateTime.Now.Month, DateTime.Now.Day, hour, 0, 0);
+		int seconds = (setTime.Hour - DateTime.Now.Hour) * 3600 - DateTime.Now.Minute * 60 + DateTime.Now.Second;
+		Console.WriteLine(seconds);
+		
+		var notification = new NotificationRequest
+		{
+			BadgeNumber = 1,
+			Description = "Wyglada, ze zapomniales o treningu",
+			Title = "Runly",
+			NotificationId = 1337,
+			Schedule =
+			{
+				NotifyTime = DateTime.Now.AddSeconds(seconds),
+				RepeatType = NotificationRepeat.Daily,            
+			}
+		};
+		LocalNotificationCenter.Current.Show(notification);
+	}
+\end{lstlisting}
+
+Listing \ref{lst:listing-cpp17} jest to funkcja, która pobiera z preferencji aplikacji parametry opcji i wyświetla je przy odpowiedniej opcji na ekranie. W przypadku braku ustawienia wartości dla danej opcji wcześniej przez użytkownika wyświetlana jest wartość domyślna opcji. 
+\begin{lstlisting}[caption=Wyświetlenie ustawionych opcji w widoku, label={lst:listing-cpp17}, language=C++]
+	public void Display_Options()
+	{
+		Login.Text = Preferences.Get(options[0], "User");
+		Waga.Text = Preferences.Get(options[2], "70");
+		Wiek.Text = Preferences.Get(options[3], "20");
+	}
+\end{lstlisting}
